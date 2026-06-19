@@ -3,45 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Universitário - Meu Semestre</title>
+    <title>Portfólio Acadêmico - Engenharia Elétrica</title>
     <style>
         :root {
-            --primary-purple: #3A2E49; /* Roxo escuro */
-            --accent-pink: #F3D1DC;    /* Rosa clarinho aquarela */
-            --earth-brown: #5C4A43;    /* Marrom terroso */
-            --bg-color: #F4EFF2;       /* Fundo suave, tom de papel/rosa bem claro */
-            --card-bg: #FFFFFF;        /* Fundo dos cards */
-            --text-color: #2D2533;     /* Texto quase preto com toque arroxeado */
+            --primary-purple: #4A3B5C; /* Roxo escuro aquarelável */
+            --accent-pink: #F8C3CD;    /* Rosa clarinho aquarela vibrante */
+            --soft-pink: #FCEEF1;      /* Rosa pastel bem suave para fundos */
+            --earth-brown: #6E554F;    /* Marrom terroso sutil */
+            --bg-color: #F7F4F6;       /* Fundo geral tom de papel artesanal */
+            --card-bg: #FFFFFF;        
+            --text-color: #2D2533;     
         }
 
         body {
-            /* Fonte estilo máquina de datilografia */
             font-family: "Courier New", Courier, monospace; 
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            font-weight: bold; /* Dá mais destaque para a fonte de máquina */
+            font-weight: bold;
         }
 
         header {
-            background-color: var(--primary-purple);
-            color: var(--accent-pink);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #5E465A 100%);
+            color: #FFFFFF;
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 4px solid var(--earth-brown);
+            padding: 50px 20px;
+            border-bottom: 5px solid var(--accent-pink);
+            box-shadow: 0 4px 15px rgba(74, 59, 92, 0.2);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-pink);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header h2 {
+            margin: 10px 0 0 0;
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: #FFFFFF;
         }
 
         header p {
             margin: 15px 0 0 0;
-            color: #FFFFFF;
+            color: var(--accent-pink);
             font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
         }
 
         .container {
@@ -53,35 +68,40 @@
         .grid-materias {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .card-materia {
             background: var(--card-bg);
-            border-radius: 4px;
-            box-shadow: 3px 3px 10px rgba(92, 74, 67, 0.15);
+            border-radius: 8px;
+            box-shadow: 4px 4px 15px rgba(110, 85, 79, 0.12);
             padding: 25px;
-            border: 2px solid var(--earth-brown);
-            border-top: 8px solid var(--primary-purple);
-            transition: transform 0.2s;
+            border: 2px solid var(--accent-pink);
+            border-top: 10px solid var(--primary-purple);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .card-materia:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
+            box-shadow: 6px 6px 20px rgba(74, 59, 92, 0.2);
         }
 
         .card-materia h2 {
             margin-top: 0;
             color: var(--primary-purple);
             font-size: 1.3rem;
-            border-bottom: 2px dashed var(--accent-pink);
-            padding-bottom: 8px;
+            border-bottom: 3px dashed var(--accent-pink);
+            padding-bottom: 10px;
         }
 
         .professor-nome {
             color: var(--earth-brown);
             font-size: 0.95rem;
             margin-bottom: 15px;
+            background-color: var(--soft-pink);
+            padding: 5px 10px;
+            border-left: 3px solid var(--earth-brown);
+            display: inline-block;
         }
 
         .lista-trabalhos {
@@ -92,7 +112,7 @@
 
         .lista-trabalhos li {
             padding: 12px 0;
-            border-bottom: 1px dashed var(--earth-brown);
+            border-bottom: 1px dashed var(--accent-pink);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -107,33 +127,36 @@
             font-size: 0.8rem;
             padding: 4px 8px;
             border-radius: 4px;
-            border: 1px solid var(--earth-brown);
+            font-weight: bold;
         }
 
         .status.concluido { 
             background: var(--accent-pink); 
-            color: var(--primary-purple); 
+            color: var(--primary-purple);
+            border: 1px solid var(--primary-purple);
         }
         
         .status.em-andamento { 
-            background: #FFF; 
+            background: #FFFFFF; 
             color: var(--earth-brown); 
+            border: 1px solid var(--earth-brown);
         }
 
         .btn-ver {
-            background-color: var(--earth-brown);
+            background-color: var(--primary-purple);
             color: #FFFFFF;
             text-decoration: none;
             padding: 6px 12px;
             border-radius: 4px;
             font-size: 0.8rem;
-            transition: background 0.2s;
-            border: 1px solid var(--primary-purple);
+            transition: all 0.2s;
+            border: 1px solid var(--earth-brown);
         }
 
         .btn-ver:hover {
-            background-color: var(--primary-purple);
-            color: var(--accent-pink);
+            background-color: var(--accent-pink);
+            color: var(--primary-purple);
+            border-color: var(--primary-purple);
         }
 
         footer {
@@ -141,7 +164,7 @@
             padding: 40px 20px;
             color: var(--earth-brown);
             font-size: 0.9rem;
-            border-top: 2px dashed var(--earth-brown);
+            border-top: 3px dashed var(--accent-pink);
             margin-top: 60px;
         }
     </style>
@@ -149,14 +172,15 @@
 <body>
 
     <header>
-        <h1>Central de Trabalhos Acadêmicos</h1>
-        <p>Faculdade - 1º Semestre / 2026</p>
+        <h1>Universidade Federal do Pampa</h1>
+        <h2>⚡ Engenharia Elétrica ⚡</h2>
+        <p>Central de Trabalhos - 1º Semestre / 2026</p>
     </header>
 
     <div class="container">
         <div class="grid-materias">
 
-            <!-- MATÉRIA DE ALGORITMOS (ATUALIZADA) -->
+            <!-- MATÉRIA DE ALGORITMOS -->
             <div class="card-materia">
                 <h2>💻 Algoritmos e Programação</h2>
                 <div class="professor-nome">Prof. Diego Luis Kreutz</div>
@@ -172,13 +196,13 @@
                 </ul>
             </div>
 
-            <!-- Espaço para uma próxima matéria que você queira adicionar depois -->
+            <!-- Próxima matéria -->
             <div class="card-materia">
-                <h2>📚 Outra Disciplina</h2>
+                <h2>📐 Circuitos Elétricos / Introdução</h2>
                 <div class="professor-nome">Prof. Nome do Professor</div>
                 <ul class="lista-trabalhos">
                     <li>
-                        <span>Trabalho Futuro</span>
+                        <span>Relatório de Laboratório</span>
                         <span class="status em-andamento">Em andamento</span>
                     </li>
                 </ul>
