@@ -33,6 +33,41 @@
             box-shadow: 0 4px 15px rgba(74, 59, 92, 0.2);
         }
 
+       <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Acadêmico - Algoritmos e Programação</title>
+    <style>
+        :root {
+            --primary-purple: #4A3B5C; /* Roxo escuro aquarelável */
+            --accent-pink: #F8C3CD;    /* Rosa clarinho aquarela vibrante */
+            --soft-pink: #FCEEF1;      /* Rosa pastel bem suave para fundos */
+            --earth-brown: #6E554F;    /* Marrom terroso sutil */
+            --bg-color: #F7F4F6;       /* Fundo geral tom de papel artesanal */
+            --card-bg: #FFFFFF;        
+            --text-color: #2D2533;     
+        }
+
+        body {
+            font-family: "Courier New", Courier, monospace; 
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #5E465A 100%);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 5px solid var(--accent-pink);
+            box-shadow: 0 4px 15px rgba(74, 59, 92, 0.2);
+        }
+
         header h1 {
             margin: 0;
             font-size: 2.4rem;
@@ -60,32 +95,45 @@
         }
 
         .container {
-            max-width: 800px; /* Reduzido para ficar mais centralizado por ser apenas um card */
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
         }
 
-        .card-materia {
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Seção Principal */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
             background: var(--card-bg);
             border-radius: 8px;
             box-shadow: 4px 4px 15px rgba(110, 85, 79, 0.12);
             padding: 30px;
             border: 2px solid var(--accent-pink);
             border-top: 10px solid var(--primary-purple);
-            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .card-materia:hover {
-            transform: translateY(-5px);
-            box-shadow: 6px 6px 20px rgba(74, 59, 92, 0.2);
-        }
-
-        .card-materia h2 {
+        .card h2 {
             margin-top: 0;
             color: var(--primary-purple);
             font-size: 1.4rem;
             border-bottom: 3px dashed var(--accent-pink);
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .professor-nome {
@@ -98,10 +146,32 @@
             display: inline-block;
         }
 
+        /* Progresso do Semestre */
+        .progress-container {
+            margin: 20px 0;
+        }
+        .progress-bar {
+            background: #E0E0E0;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            border: 1px solid var(--earth-brown);
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, var(--accent-pink), var(--primary-purple));
+            height: 100%;
+            width: 35%; /* Modifique aqui a porcentagem do semestre concluído */
+        }
+
+        /* Abas / Filtro de Atividades */
+        .atividades-secao {
+            margin-top: 20px;
+        }
+
         .lista-trabalhos {
             list-style: none;
             padding: 0;
-            margin: 25px 0 0 0;
+            margin: 0;
         }
 
         .lista-trabalhos li {
@@ -113,22 +183,16 @@
             gap: 10px;
         }
 
-        .lista-trabalhos li:last-child {
-            border-bottom: none;
-        }
-
-        .status {
-            font-size: 0.8rem;
-            padding: 4px 8px;
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 6px;
             border-radius: 4px;
-            font-weight: bold;
+            text-transform: uppercase;
+            border: 1px solid var(--earth-brown);
         }
-
-        .status.concluido { 
-            background: var(--accent-pink); 
-            color: var(--primary-purple);
-            border: 1px solid var(--primary-purple);
-        }
+        .tag.exercicio { background: #E3F2FD; color: #0D47A1; }
+        .tag.projeto { background: #E8F5E9; color: #1B5E20; }
+        .tag.prova { background: #FFEBEE; color: #B71C1C; }
 
         .btn-ver {
             background-color: var(--primary-purple);
@@ -147,6 +211,60 @@
             border-color: var(--primary-purple);
         }
 
+        /* Lateral (Sidebar) */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: #FFFDF9; /* Tom de papel antigo sticky-note */
+            border: 2px solid var(--accent-pink);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .widget h3 {
+            margin-top: 0;
+            color: var(--primary-purple);
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--accent-pink);
+            padding-bottom: 5px;
+        }
+
+        .links-sistema {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .links-sistema a {
+            color: var(--earth-brown);
+            text-decoration: none;
+            padding: 8px;
+            background: var(--soft-pink);
+            border-radius: 4px;
+            transition: 0.2s;
+            text-align: center;
+            border: 1px dashed var(--primary-purple);
+        }
+
+        .links-sistema a:hover {
+            background: var(--primary-purple);
+            color: #FFFFFF;
+        }
+
+        .lembretes-list {
+            padding-left: 20px;
+            margin: 10px 0 0 0;
+        }
+        .lembretes-list li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -161,26 +279,90 @@
 
     <header>
         <h1>Universidade Federal do Pampa</h1>
-        <h2>⚡ Engenharia Elétrica ⚡</h2>
-        <p>Aulas e Projetos - 1º Semestre / 2026</p>
+        <h2>Engenharia Elétrica</h2>
+        <p>Portfólio de Aprendizagem - 2026</p>
     </header>
 
     <div class="container">
-        <!-- MATÉRIA ÚNICA: ALGORITMOS E PROGRAMAÇÃO -->
-        <div class="card-materia">
-            <h2>💻 Algoritmos e Programação</h2>
-            <div class="professor-nome">Prof. Diego Luis Kreutz</div>
-            <ul class="lista-trabalhos">
-                <li>
-                    <span>Exercício 01 - Introdução</span>
-                    <span class="status concluido">Concluido</span>
-                </li>
-                <li>
-                    <span>Projeto Primeiro Semestre</span>
-                    <a href="#" class="btn-ver">Ver Projeto</a>
-                </li>
-            </ul>
+        
+        <!-- CONTEÚDO PRINCIPAL (ESQUERDA) -->
+        <div class="main-content">
+            
+            <!-- CARD DA MATÉRIA -->
+            <div class="card">
+                <h2>💻 Algoritmos e Programação</h2>
+                <div class="professor-nome">Prof. Diego Luis Kreutz</div>
+                
+                <!-- Cronograma Visível -->
+                <div class="progress-container">
+                    <span style="font-size: 0.9rem; color: var(--earth-brown);">Progresso do Semestre (Semanas):</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Lista de Atividades Atuais -->
+                <div class="atividades-secao">
+                    <span style="color: var(--primary-purple);">📋 Atividades Desenvolvidas:</span>
+                    <ul class="lista-trabalhos">
+                        <li>
+                            <div>
+                                <span class="tag exercicio">Exercício</span>
+                                <span>Lista 01 - Variáveis e Operadores</span>
+                            </div>
+                            <a href="#" class="btn-ver">Ver Código</a>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="tag exercicio">Exercício</span>
+                                <span>Lista 02 - Estruturas Condicionais (If/Else)</span>
+                            </div>
+                            <a href="#" class="btn-ver">Ver Código</a>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="tag projeto">Projeto</span>
+                                <span>Trabalho Semestral - Desenvolvimento Prático</span>
+                            </div>
+                            <a href="#" class="btn-ver">Ver Repositório</a>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="tag prova">Prova</span>
+                                <span>Gabarito & Resolução - Prova 1</span>
+                            </div>
+                            <a href="#" class="btn-ver">Ver Prova</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
+
+        <!-- BARRA LATERAL (DIREITA) -->
+        <div class="sidebar">
+            
+            <!-- Widget de Links Rápidos -->
+            <div class="widget">
+                <h3>🔗 Acesso Rápido</h3>
+                <div class="links-sistema">
+                    <a href="https://moodle.unipampa.edu.br/" target="_blank">Moodle Unipampa</a>
+                    <a href="https://guri.unipampa.edu.br/" target="_blank">Portal GURI</a>
+                </div>
+            </div>
+
+            <!-- Widget de Post-it de Notas -->
+            <div class="widget" style="background: #FFFEE0;">
+                <h3>📌 Bloco de Notas</h3>
+                <ul class="lembretes-list">
+                    <li>Estudar laços de repetição (For/While).</li>
+                    <li>Próxima entrega de algoritmos na sexta-feira.</li>
+                    <li>Trazer notebook carregado para a aula prática.</li>
+                </ul>
+            </div>
+
+        </div>
+
     </div>
 
     <footer>
