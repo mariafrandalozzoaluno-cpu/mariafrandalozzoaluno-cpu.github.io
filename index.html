@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Acadêmico - Engenharia Elétrica</title>
+    <title>Portfólio Acadêmico - Algoritmos e Programação</title>
     <style>
         :root {
             --primary-purple: #4A3B5C; /* Roxo escuro aquarelável */
@@ -60,22 +60,16 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px; /* Reduzido para ficar mais centralizado por ser apenas um card */
             margin: 40px auto;
             padding: 0 20px;
-        }
-
-        .grid-materias {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
         }
 
         .card-materia {
             background: var(--card-bg);
             border-radius: 8px;
             box-shadow: 4px 4px 15px rgba(110, 85, 79, 0.12);
-            padding: 25px;
+            padding: 30px;
             border: 2px solid var(--accent-pink);
             border-top: 10px solid var(--primary-purple);
             transition: transform 0.2s, box-shadow 0.2s;
@@ -89,17 +83,17 @@
         .card-materia h2 {
             margin-top: 0;
             color: var(--primary-purple);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             border-bottom: 3px dashed var(--accent-pink);
             padding-bottom: 10px;
         }
 
         .professor-nome {
             color: var(--earth-brown);
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 15px;
             background-color: var(--soft-pink);
-            padding: 5px 10px;
+            padding: 6px 12px;
             border-left: 3px solid var(--earth-brown);
             display: inline-block;
         }
@@ -107,11 +101,11 @@
         .lista-trabalhos {
             list-style: none;
             padding: 0;
-            margin: 20px 0 0 0;
+            margin: 25px 0 0 0;
         }
 
         .lista-trabalhos li {
-            padding: 12px 0;
+            padding: 14px 0;
             border-bottom: 1px dashed var(--accent-pink);
             display: flex;
             justify-content: space-between;
@@ -134,12 +128,6 @@
             background: var(--accent-pink); 
             color: var(--primary-purple);
             border: 1px solid var(--primary-purple);
-        }
-        
-        .status.em-andamento { 
-            background: #FFFFFF; 
-            color: var(--earth-brown); 
-            border: 1px solid var(--earth-brown);
         }
 
         .btn-ver {
@@ -174,40 +162,24 @@
     <header>
         <h1>Universidade Federal do Pampa</h1>
         <h2>⚡ Engenharia Elétrica ⚡</h2>
-        <p>Central de Trabalhos - 1º Semestre / 2026</p>
+        <p>Aulas e Projetos - 1º Semestre / 2026</p>
     </header>
 
     <div class="container">
-        <div class="grid-materias">
-
-            <!-- MATÉRIA DE ALGORITMOS -->
-            <div class="card-materia">
-                <h2>💻 Algoritmos e Programação</h2>
-                <div class="professor-nome">Prof. Diego Luis Kreutz</div>
-                <ul class="lista-trabalhos">
-                    <li>
-                        <span>Exercício 01 - Introdução</span>
-                        <span class="status concluido">Concluido</span>
-                    </li>
-                    <li>
-                        <span>Projeto Primeiro Semestre</span>
-                        <a href="#" class="btn-ver">Ver Projeto</a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Próxima matéria -->
-            <div class="card-materia">
-                <h2>📐 Circuitos Elétricos / Introdução</h2>
-                <div class="professor-nome">Prof. Nome do Professor</div>
-                <ul class="lista-trabalhos">
-                    <li>
-                        <span>Relatório de Laboratório</span>
-                        <span class="status em-andamento">Em andamento</span>
-                    </li>
-                </ul>
-            </div>
-
+        <!-- MATÉRIA ÚNICA: ALGORITMOS E PROGRAMAÇÃO -->
+        <div class="card-materia">
+            <h2>💻 Algoritmos e Programação</h2>
+            <div class="professor-nome">Prof. Diego Luis Kreutz</div>
+            <ul class="lista-trabalhos">
+                <li>
+                    <span>Exercício 01 - Introdução</span>
+                    <span class="status concluido">Concluido</span>
+                </li>
+                <li>
+                    <span>Projeto Primeiro Semestre</span>
+                    <a href="#" class="btn-ver">Ver Projeto</a>
+                </li>
+            </ul>
         </div>
     </div>
 
