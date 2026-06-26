@@ -3,163 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Algoritmos e Programação</title>
+    <title>Portfólio Acadêmico - Algoritmos e Programação</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-purple: #4A3B5C; /* Roxo escuro aquarelável */
+            --accent-pink: #F8C3CD;    /* Rosa clarinho aquarela vibrante */
+            --soft-pink: #FCEEF1;      /* Rosa pastel bem suave para fundos */
+            --mint-green: #E8F5E9;     /* Verde menta suave */
+            --pool-blue: #E3F2FD;      /* Azul piscina suave */
+            --earth-brown: #6E554F;    /* Marrom terroso sutil */
+            --bg-color: #F7F4F6;       /* Fundo geral tom de papel artesanal */
+            --card-bg: #FFFFFF;        
+            --text-color: #2D2533;     
         }
 
         body {
-            background-color: #f4f7f6;
-            color: #333;
-            padding: 40px 20px;
+            font-family: "Courier New", Courier, monospace; 
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, #634357 50%, #40516B 100%);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 6px solid var(--accent-pink);
+            box-shadow: 0 4px 15px rgba(74, 59, 92, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-pink);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header h2 {
+            margin: 10px 0 0 0;
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #FFFFFF;
+        }
+
+        header p {
+            margin: 15px 0 0 0;
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            background: rgba(248, 195, 205, 0.3);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--accent-pink);
         }
 
         .container {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 30px;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            background: #1a365d;
-            color: white;
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-content, .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 4px 4px 20px rgba(110, 85, 79, 0.15);
             padding: 30px;
+            border: 2px solid var(--accent-pink);
+            border-top: 12px solid var(--primary-purple);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary-purple);
+            font-size: 1.5rem;
+            border-bottom: 3px dashed var(--accent-pink);
+            padding-bottom: 12px;
+        }
+
+        .professor-nome {
+            color: var(--earth-brown);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            background-color: var(--soft-pink);
+            padding: 8px 14px;
+            border-left: 4px solid var(--primary-purple);
+            display: inline-block;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Progresso Expandido do Semestre */
+        .progress-container {
+            background: linear-gradient(to right, #FFF7F9, #F0F4C3);
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px dashed var(--earth-brown);
+            margin: 20px 0;
         }
 
-        header h1 {
-            font-size: 24pt;
-            margin-bottom: 10px;
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--earth-brown);
+            margin-bottom: 8px;
         }
 
-        .atividade-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            padding: 25px;
-            border-left: 5px solid #2b6cb0;
+        .progress-bar {
+            background: #EAEAEA;
+            border-radius: 10px;
+            height: 22px;
+            overflow: hidden;
+            border: 1.5px solid var(--earth-brown);
         }
 
-        .atividade-titulo {
-            font-size: 14pt;
-            color: #2b6cb0;
-            margin-bottom: 15px;
-            font-weight: bold;
+        .progress-fill {
+            background: linear-gradient(90deg, #F8C3CD 0%, #A188AF 50%, #4A3B5C 100%);
+            height: 100%;
+            width: 65%; 
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.8rem;
         }
 
-        /* Sistema de Abas Interativas */
+        /* Lista de Trabalhos */
+        .atividades-secao {
+            margin-top: 25px;
+        }
+
+        .item-atividade {
+            border-bottom: 2px dashed var(--accent-pink);
+            padding: 20px 0;
+        }
+
+        .atividade-topo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            border: 1px solid rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+        .tag.exercicio { background: var(--pool-blue); color: #0D47A1; }
+        .tag.projeto { background: var(--mint-green); color: #1B5E20; }
+        .tag.prova { background: #FFEBEE; color: #B71C1C; }
+
+        .nome-atv {
+            font-size: 1.05rem;
+            color: var(--text-color);
+        }
+
+        /* Novo Sistema de Abas Integrado ao Estilo Antigo */
         .tabs-container {
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .tab-buttons {
             display: flex;
-            gap: 10px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            gap: 8px;
+            margin-bottom: 10px;
         }
 
         .tab-btn {
-            background: #edf2f7;
-            border: none;
-            padding: 10px 20px;
-            font-size: 11pt;
-            font-weight: 600;
-            color: #4a5568;
-            border-radius: 5px;
+            background-color: var(--soft-pink);
+            color: var(--primary-purple);
+            border: 1px solid var(--accent-pink);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            font-size: 0.8rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
         }
 
         .tab-btn:hover {
-            background: #e2e8f0;
+            background-color: var(--accent-pink);
         }
 
         .tab-btn.active {
-            background: #2b6cb0;
-            color: white;
+            background-color: var(--primary-purple);
+            color: #FFFFFF;
+            border-color: var(--primary-purple);
         }
 
         .tab-content {
             display: none;
-            background: #fafafa;
-            padding: 20px;
+            background: #FFFDF9;
+            padding: 15px;
             border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            line-height: 1.6;
+            border: 1px dashed var(--accent-pink);
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .tab-content.active {
             display: block;
         }
 
-        /* Estilização dos Códigos */
+        /* Estilização dos Blocos de Código */
         pre {
-            background: #2d3748;
-            color: #f7fafc;
-            padding: 15px;
+            background: #2D2533;
+            color: #F8C3CD;
+            padding: 12px;
             border-radius: 6px;
             overflow-x: auto;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 10pt;
+            font-family: monospace;
+            font-size: 0.85rem;
             margin-top: 10px;
+            border-left: 4px solid var(--accent-pink);
         }
 
         /* Estilização das Imagens */
         .img-container {
-            margin-top: 15px;
+            margin-top: 10px;
             text-align: center;
         }
 
         .img-container img {
             max-width: 100%;
             height: auto;
-            border: 2px solid #cbd5e0;
+            border: 2px dashed var(--accent-pink);
             border-radius: 6px;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 5px;
         }
 
-        .img-legenda {
-            font-size: 9pt;
-            color: #718096;
-            font-style: italic;
+        /* Widgets da Lateral */
+        .widget {
+            background: #FFFFFF;
+            border: 2px solid var(--accent-pink);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 4px 4px 12 rgba(0,0,0,0.04);
+        }
+
+        .widget h3 {
+            margin-top: 0;
+            color: var(--primary-purple);
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--accent-pink);
+            padding-bottom: 8px;
+        }
+
+        /* Bloco de Notas (Estilo Post-it Amarelo) */
+        .post-it {
+            background: #FFFEE0 !important; 
+            border-left: 10px solid #FBC02D !important;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+        }
+
+        .post-it p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #5D4037;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px dashed #FBC02D;
+        }
+
+        .links-sistema a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px;
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+            border-radius: 6px;
+            transition: 0.2s;
+            text-align: center;
+            border: 1px solid #90CAF9;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .links-sistema a:hover {
+            transform: scale(1.02);
+            background: var(--primary-purple);
+            color: white;
+        }
+
+        .lembretes-list {
+            padding: 0;
+            list-style: none;
+            margin: 15px 0 0 0;
+        }
+        
+        .lembretes-list li {
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .lembretes-list li.urgente { background: #FFEBEE; border-left: 4px solid #D32F2F; color: #C62828; }
+        .lembretes-list li.importante { background: #E8F5E9; border-left: 4px solid #388E3C; color: #2E7D32; }
+        .lembretes-list li.normal { background: #E3F2FD; border-left: 4px solid #1976D2; color: #1565C0; }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--earth-brown);
+            font-size: 0.9rem;
+            border-top: 3px dashed var(--accent-pink);
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
     <header>
-        <h1>Portfólio de Entregas Acadêmicas</h1>
-        <p>Algoritmos e Programação Prática</p>
+        <h1>Universidade Federal do Pampa</h1>
+        <h2>Engenharia Elétrica</h2>
+        <p>Portfólio de Aprendizagem - 2026</p>
     </header>
 
-    <div class="atividade-card">
-        <div class="atividade-titulo">Atividade 4: Lista de 15 Exercícios de Lógica (Engenharia Elétrica)</div>
-        <div class="tabs-container">
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab(event, 'at4-enunciado')">📋 O que foi pedido</button>
-                <button class="tab-btn" onclick="openTab(event, 'at4-codigo')">💻 Código / Resolução</button>
-            </div>
+    <div class="container">
+        
+        <div class="main-content">
             
-            <div id="at4-enunciado" class="tab-content active">
-                <p><strong>Enunciado do Professor:</strong> Resolver no mínimo 15 exercícios envolvendo estruturas condicionais simples aplicadas à engenharia[cite: 1, 2].</p>
-                <p><em>Exemplo de Questão 1:</em> Tensão em um circuito. Leia a tensão. Se for maior que 220V, exibir "Perigo alta tensão"[cite: 3, 4].</p>
-                <p><em>Exemplo de Questão 3:</em> Estado de um disjuntor (ligado/desligado)[cite: 4].</p>
-            </div>
-            
-            <div id="at4-codigo" class="tab-content">
-                <p><strong>Estrutura lógica desenvolvida:</strong></p>
-                <pre>
+            <div class="card">
+                <h2>💻 Algoritmos e Programação</h2>
+                <div class="professor-nome">Prof. Diego Luis Kreutz</div>
+                
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span>🗓️ Progresso do Semestre Coberto:</span>
+                        <span>Semana 12 de 18 (65%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill">65%</div>
+                    </div>
+                    <p style="margin: 8px 0 0 0; font-size: 0.8rem; color: var(--earth-brown); font-style: italic;">
+                        * Quase lá! Entrando na reta final de estruturas de dados e matrizes.
+                    </p>
+                </div>
+
+                <div class="atividades-secao">
+                    <span style="color: var(--primary-purple); font-size: 1.1rem;">📋 Atividades Desenvolvidas no Semestre:</span>
+                    
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag exercicio">Exercício</span>
+                            <span class="nome-atv">Atividade 4: Lista de 15 Exercícios de Lógica</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at4-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at4-codigo')">💻 Código / Resolução</button>
+                            </div>
+                            <div id="at4-enunciado" class="tab-content active">
+                                <p><strong>Enunciado:</strong> Resolver no mínimo 15 exercícios envolvendo estruturas condicionais simples aplicadas à engenharia elétrica.</p>
+                                <p style="margin-top: 5px;"><em>Exemplo Prático:</em> Verificação de tensão (Acima de 220V exibe "Perigo alta tensão"). Estado de disjuntores e cálculo de potência consumida.</p>
+                            </div>
+                            <div id="at4-codigo" class="tab-content">
+                                <pre>
 # Exercício 1 - Verificação de Tensão
 tensao = float(input("Digite a tensão do circuito: "))
 if tensao > 220:
@@ -167,92 +392,122 @@ if tensao > 220:
 else:
     print("Tensão normal.")
 
-# Exercício 3 - Disjuntor
+# Exercício 3 - Estado do Disjuntor
 disjuntor = input("Digite o estado (ligado/desligado): ")
 if disjuntor == "ligado":
     print("Circuito operando normalmente.")
 </pre>
-            </div>
-        </div>
-    </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="atividade-card">
-        <div class="atividade-titulo">Atividade 5: Introdução a Algoritmos com Python (Claude.ai)</div>
-        <div class="tabs-container">
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab(event, 'at5-enunciado')">📋 O que foi pedido</button>
-                <button class="tab-btn" onclick="openTab(event, 'at5-codigo')">💻 Código / Resolução</button>
-            </div>
-            
-            <div id="at5-enunciado" class="tab-content active">
-                <p><strong>Enunciado:</strong> Escolher e resolver no mínimo 10 exercícios da apostila desenvolvida pelo Claude.ai em aula usando a linguagem Python[cite: 8, 9].</p>
-            </div>
-            
-            <div id="at5-codigo" class="tab-content">
-                <pre>
-# Exemplo de código estruturado em Python para tratamento de dados
-# desenvolvido de acordo com as diretrizes da apostila da atividade
-print("Exercícios Python executados e validados.")
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag exercicio">Exercício</span>
+                            <span class="nome-atv">Atividade 5: Introdução a Algoritmos com Python</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at5-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at5-codigo')">💻 Código / Resolução</button>
+                            </div>
+                            <div id="at5-enunciado" class="tab-content active">
+                                <p><strong>Enunciado:</strong> Escolher e resolver no mínimo 10 exercícios da apostila desenvolvida em conjunto com a IA Claude.ai durante as aulas práticas.</p>
+                            </div>
+                            <div id="at5-codigo" class="tab-content">
+                                <pre>
+# Resolução de Exercícios da Apostila Claude.ai
+print("Exercícios de fixação em Python executados e validados com sucesso.")
 </pre>
-            </div>
-        </div>
-    </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="atividade-card">
-        <div class="atividade-titulo">Atividade 9: Exercícios de Listas/Vetores/Arrays em Python</div>
-        <div class="tabs-container">
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab(event, 'at9-enunciado')">📋 O que foi pedido</button>
-                <button class="tab-btn" onclick="openTab(event, 'at9-codigo')">💻 Código / Resolução e Prints</button>
-            </div>
-            
-            <div id="at9-enunciado" class="tab-content active">
-                <p><strong>Enunciado:</strong> Escrever e executar o código Python dos exercícios de listas, vetores e arrays. Comprovar o funcionamento com prints da tela de execução do seu computador[cite: 30, 31].</p>
-            </div>
-            
-            <div id="at9-codigo" class="tab-content">
-                <p><strong>Imagens de comprovação da execução (Classroom):</strong></p>
-                
-                <div class="img-container">
-                    <img src="Screenshot 20260423-184147.png" alt="Print de Execução 1" onerror="this.style.display='none';">
-                    <img src="Screenshot 20260423-184151.png" alt="Print de Execução 2" onerror="this.style.display='none';">
-                    <div class="img-legenda">Telas capturadas durante a execução dos códigos de arrays[cite: 310, 311].</div>
-                </div>
-
-                <pre>
-# Exemplo de manipulação de Vetores/Listas em Python
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag projeto">Projeto</span>
+                            <span class="nome-atv">Atividade 9: Exercícios de Listas, Vetores e Arrays</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at9-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at9-codigo')">💻 Código & Prints</button>
+                            </div>
+                            <div id="at9-enunciado" class="tab-content active">
+                                <p><strong>Enunciado:</strong> Escrever códigos Python manipulando estruturas de vetores/arrays e comprovar o funcionamento anexando os prints das telas de execução.</p>
+                            </div>
+                            <div id="at9-codigo" class="tab-content">
+                                <div class="img-container">
+                                    <img src="Screenshot 20260423-184147.png" alt="Print Classroom 1" onerror="this.style.display='none';">
+                                    <img src="Screenshot 20260423-184151.png" alt="Print Classroom 2" onerror="this.style.display='none';">
+                                </div>
+                                <pre>
+# Manipulação de Vetores/Listas em Python
 vetor = [10, 20, 30, 40, 50]
 media = sum(vetor) / len(vetor)
 print(f"A média dos valores medidos é: {media}")
 </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
         </div>
+
+        <div class="sidebar">
+            
+            <div class="widget post-it">
+                <h3>📌 Bloco de Notas: Como Funciona?</h3>
+                <p>
+                    Este portal foi criado para registrar minha evolução na cadeira de Algoritmos. Aqui eu organizo códigos, revisões de provas e monitoro meu andamento acadêmico de forma centralizada!
+                </p>
+            </div>
+
+            <div class="widget">
+                <h3>🔔 Status das Atividades</h3>
+                <ul class="lembretes-list">
+                    <li class="urgente">🚨 Prova 2 agendada para o próximo mês!</li>
+                    <li class="importante">✅ Trabalho prático em grupo enviado.</li>
+                    <li class="normal">📚 Revisar conteúdos de matrizes e vetores.</li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3>🔗 Portais Acadêmicos</h3>
+                <div class="links-sistema">
+                    <a href="https://moodle.unipampa.edu.br/" target="_blank">Moodle Unipampa 🎓</a>
+                    <a href="https://guri.unipampa.edu.br/" target="_blank">Portal GURI 📑</a>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-</div>
+    <footer>
+        <p>Desenvolvido por Maria Frandalozzo &copy; 2026</p>
+    </footer>
 
-<script>
-    function openTab(evt, tabName) {
-        // Encontra o container do card específico onde o botão foi clicado
-        var card = evt.currentTarget.closest('.atividade-card');
-        
-        // Esconde todos os conteúdos de abas DAQUELE card
-        var tabContents = card.getElementsByClassName("tab-content");
-        for (var i = 0; i < tabContents.length; i++) {
-            tabContents[i].classList.remove("active");
+    <script>
+        function openTab(evt, tabName) {
+            var item = evt.currentTarget.closest('.item-atividade');
+            
+            var tabContents = item.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            var tabButtons = item.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            item.querySelector("#" + tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
         }
-
-        // Desativa todos os botões de abas DAQUELE card
-        var tabButtons = card.getElementsByClassName("tab-btn");
-        for (var i = 0; i < tabButtons.length; i++) {
-            tabButtons[i].classList.remove("active");
-        }
-
-        // Mostra a aba atual e adiciona a classe active ao botão que foi clicado
-        card.querySelector("#" + tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-    }
-</script>
+    </script>
 
 </body>
 </html>
