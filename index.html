@@ -63,11 +63,11 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 40px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 1.8fr 1.2fr;
+            grid-template-columns: 1.9fr 1.1fr;
             gap: 30px;
         }
 
@@ -111,7 +111,6 @@
             border-radius: 0 8px 8px 0;
         }
 
-        /* Progresso Expandido do Semestre */
         .progress-container {
             background: linear-gradient(to right, #FFF7F9, #F0F4C3);
             padding: 15px;
@@ -139,7 +138,7 @@
         .progress-fill {
             background: linear-gradient(90deg, #F8C3CD 0%, #A188AF 50%, #4A3B5C 100%);
             height: 100%;
-            width: 65%; 
+            width: 100%; 
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -148,7 +147,6 @@
             font-size: 0.8rem;
         }
 
-        /* Lista de Trabalhos */
         .atividades-secao {
             margin-top: 25px;
         }
@@ -172,6 +170,8 @@
             text-transform: uppercase;
             border: 1px solid rgba(0,0,0,0.15);
             display: inline-block;
+            min-width: 80px;
+            text-align: center;
         }
         .tag.exercicio { background: var(--pool-blue); color: #0D47A1; }
         .tag.projeto { background: var(--mint-green); color: #1B5E20; }
@@ -182,7 +182,6 @@
             color: var(--text-color);
         }
 
-        /* Novo Sistema de Abas Integrado ao Estilo Antigo */
         .tabs-container {
             margin-top: 10px;
         }
@@ -230,7 +229,6 @@
             display: block;
         }
 
-        /* Estilização dos Blocos de Código */
         pre {
             background: #2D2533;
             color: #F8C3CD;
@@ -243,7 +241,6 @@
             border-left: 4px solid var(--accent-pink);
         }
 
-        /* Estilização das Imagens */
         .img-container {
             margin-top: 10px;
             text-align: center;
@@ -257,13 +254,12 @@
             margin-bottom: 5px;
         }
 
-        /* Widgets da Lateral */
         .widget {
             background: #FFFFFF;
             border: 2px solid var(--accent-pink);
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 4px 4px 12 rgba(0,0,0,0.04);
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.04);
         }
 
         .widget h3 {
@@ -274,7 +270,6 @@
             padding-bottom: 8px;
         }
 
-        /* Bloco de Notas (Estilo Post-it Amarelo) */
         .post-it {
             background: #FFFEE0 !important; 
             border-left: 10px solid #FBC02D !important;
@@ -342,7 +337,7 @@
     <header>
         <h1>Universidade Federal do Pampa</h1>
         <h2>Engenharia Elétrica</h2>
-        <p>Portfólio de Aprendizagem - 2026</p>
+        <p>Portfólio de Aprendizagem - Completo</p>
     </header>
 
     <div class="container">
@@ -356,23 +351,44 @@
                 <div class="progress-container">
                     <div class="progress-info">
                         <span>🗓️ Progresso do Semestre Coberto:</span>
-                        <span>Semana 12 de 18 (65%)</span>
+                        <span>Semana 18 de 18 (100% Concluído)</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill">65%</div>
+                        <div class="progress-fill">100%</div>
                     </div>
                     <p style="margin: 8px 0 0 0; font-size: 0.8rem; color: var(--earth-brown); font-style: italic;">
-                        * Quase lá! Entrando na reta final de estruturas de dados e matrizes.
+                        * Portfólio atualizado com as 24 atividades descritas no relatório acadêmico.
                     </p>
                 </div>
 
                 <div class="atividades-secao">
-                    <span style="color: var(--primary-purple); font-size: 1.1rem;">📋 Atividades Desenvolvidas no Semestre:</span>
+                    <span style="color: var(--primary-purple); font-size: 1.1rem;">📋 Atividades Desenvolvidas no Semestre (1 a 24):</span>
                     
                     <div class="item-atividade">
                         <div class="atividade-topo">
                             <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividade 4: Lista de 15 Exercícios de Lógica</span>
+                            <span class="nome-atv">Atividades 1, 2 e 3: Diagnósticos e Quizzes Iniciais</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at13-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at13-codigo')">💻 Resolução</button>
+                            </div>
+                            <div id="at13-enunciado" class="tab-content active">
+                                <p><strong>Atv 1:</strong> Preenchimento do formulário de diagnóstico inicial da disciplina.</p>
+                                <p><strong>Atv 2:</strong> QUIZ - Lógica de Programação (Preparatório realizado em aula).</p>
+                                <p><strong>Atv 3:</strong> QUIZ - Diagnóstico Geral de Lógica de Programação.</p>
+                            </div>
+                            <div id="at13-codigo" class="tab-content">
+                                <p>Atividades diagnósticas conceituais preenchidas diretamente através dos formulários oficiais disponibilizados no Google Classroom da Unipampa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag exercicio">Exercício</span>
+                            <span class="nome-atv">Atividade 4: Lista de 15 Exercícios de Lógica (Eng. Elétrica)</span>
                         </div>
                         <div class="tabs-container">
                             <div class="tab-buttons">
@@ -380,22 +396,24 @@
                                 <button class="tab-btn" onclick="openTab(event, 'at4-codigo')">💻 Código / Resolução</button>
                             </div>
                             <div id="at4-enunciado" class="tab-content active">
-                                <p><strong>Enunciado:</strong> Resolver no mínimo 15 exercícios envolvendo estruturas condicionais simples aplicadas à engenharia elétrica.</p>
-                                <p style="margin-top: 5px;"><em>Exemplo Prático:</em> Verificação de tensão (Acima de 220V exibe "Perigo alta tensão"). Estado de disjuntores e cálculo de potência consumida.</p>
+                                <p><strong>Enunciado:</strong> Escolher e resolver no mínimo 15 exercícios práticos envolvendo estruturas condicionais simples aplicadas à área de interesse (Engenharia Elétrica).</p>
                             </div>
                             <div id="at4-codigo" class="tab-content">
                                 <pre>
-# Exercício 1 - Verificação de Tensão
-tensao = float(input("Digite a tensão do circuito: "))
+# Exercício 1 - Tensão de um circuito
+tensao = float(input("Digite a tensão (V): "))
 if tensao > 220:
-    print("Perigo alta tensão!")
-else:
-    print("Tensão normal.")
+    print("Perigo alta tensão")
 
-# Exercício 3 - Estado do Disjuntor
-disjuntor = input("Digite o estado (ligado/desligado): ")
-if disjuntor == "ligado":
-    print("Circuito operando normalmente.")
+# Exercício 3 - Estado de um disjuntor
+disjuntor = int(input("Digite 1 para ligado ou 0 para desligado: "))
+if disjuntor == 0:
+    print("Disjuntor desligado")
+
+# Exercício 5 - Potência consumida
+potencia = float(input("Digite a potência (W): "))
+if potencia > 1000:
+    print("Consumo elevado")
 </pre>
                             </div>
                         </div>
@@ -404,20 +422,50 @@ if disjuntor == "ligado":
                     <div class="item-atividade">
                         <div class="atividade-topo">
                             <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividade 5: Introdução a Algoritmos com Python</span>
+                            <span class="nome-atv">Atividade 5: Resolução da Apostila Prática (Claude.ai)</span>
                         </div>
                         <div class="tabs-container">
                             <div class="tab-buttons">
                                 <button class="tab-btn active" onclick="openTab(event, 'at5-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at5-codigo')">💻 Código / Resolução</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at5-codigo')">💻 Resolução</button>
                             </div>
                             <div id="at5-enunciado" class="tab-content active">
-                                <p><strong>Enunciado:</strong> Escolher e resolver no mínimo 10 exercícios da apostila desenvolvida em conjunto com a IA Claude.ai durante as aulas práticas.</p>
+                                <p><strong>Enunciado:</strong> Resolver no mínimo 10 exercícios práticos utilizando a apostila de algoritmos gerada e refinada com o auxílio da ferramenta de IA Claude.ai.</p>
                             </div>
                             <div id="at5-codigo" class="tab-content">
                                 <pre>
-# Resolução de Exercícios da Apostila Claude.ai
-print("Exercícios de fixação em Python executados e validados com sucesso.")
+# Exercícios de Fixação de Sintaxe Python desenvolvidos em aula
+print("Apostila prática Claude.ai concluída")
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag exercicio">Exercício</span>
+                            <span class="nome-atv">Atividades 6, 7 e 8: Condicionais e Algoritmos Práticos</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at68-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at68-codigo')">💻 Resolução</button>
+                            </div>
+                            <div id="at68-enunciado" class="tab-content active">
+                                <p><strong>Atv 6:</strong> Resolução de problemas propostos em sala de aula aplicando condições compostas aninhadas.</p>
+                                <p><strong>Atv 7:</strong> Atividade Prática de Fixação Supervisionada em Laboratório.</p>
+                                <p><strong>Atv 8:</strong> Implementação de algoritmos estruturados para equações e medições da engenharia.</p>
+                            </div>
+                            <div id="at68-codigo" class="tab-content">
+                                <pre>
+# Exemplo estrutural de condições compostas
+valor = float(input("Medição de entrada: "))
+if valor < 0:
+    print("Valor inválido para o sistema")
+elif valor <= 50:
+    print("Operação em regime de baixa carga")
+else:
+    print("Operação em regime padrão")
 </pre>
                             </div>
                         </div>
@@ -431,22 +479,122 @@ print("Exercícios de fixação em Python executados e validados com sucesso.")
                         <div class="tabs-container">
                             <div class="tab-buttons">
                                 <button class="tab-btn active" onclick="openTab(event, 'at9-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at9-codigo')">💻 Código & Prints</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at9-codigo')">💻 Código & Gráficos</button>
                             </div>
                             <div id="at9-enunciado" class="tab-content active">
-                                <p><strong>Enunciado:</strong> Escrever códigos Python manipulando estruturas de vetores/arrays e comprovar o funcionamento anexando os prints das telas de execução.</p>
+                                <p><strong>Enunciado:</strong> Escrever códigos Python focados na manipulação estruturada de listas e vetores de dados. Comprovar o funcionamento com capturas de tela das execuções.</p>
                             </div>
                             <div id="at9-codigo" class="tab-content">
                                 <div class="img-container">
-                                    <img src="Screenshot 20260423-184147.png" alt="Print Classroom 1" onerror="this.style.display='none';">
-                                    <img src="Screenshot 20260423-184151.png" alt="Print Classroom 2" onerror="this.style.display='none';">
+                                    <img src="Screenshot 20260423-184147.png" alt="Execução Arrays" onerror="this.style.display='none';">
                                 </div>
                                 <pre>
-# Manipulação de Vetores/Listas em Python
-vetor = [10, 20, 30, 40, 50]
-media = sum(vetor) / len(vetor)
-print(f"A média dos valores medidos é: {media}")
+# Manipulação de Arrays para coleta de medições elétricas
+leituras = [110.2, 220.5, 218.1, 115.4]
+media_tensao = sum(leituras) / len(leituras)
+print(f"Média das tensões coletadas: {media_tensao:.2f} V")
 </pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag exercicio">Exercício</span>
+                            <span class="nome-atv">Atividades 10 a 15: Laços de Repetição e Funções</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at1015-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at1015-codigo')">💻 Códigos</button>
+                            </div>
+                            <div id="at1015-enunciado" class="tab-content active">
+                                <p>Série de laboratórios e desafios em aula explorando malhas de repetição estruturadas (`for`, `while`) e modularização através de funções:</p>
+                                <p><em>Atv 10, 11 e 12:</em> Iterações matemáticas, contadores e acumuladores de carga.</p>
+                                <p><em>Atv 13, 14 e 15:</em> Estruturação de menus iterativos para consoles e escopos funcionais.</p>
+                            </div>
+                            <div id="at1015-codigo" class="tab-content">
+                                <pre>
+# Loop para simulação de amostragem contínua de um sensor
+contador = 0
+while contador < 5:
+    print(f"Coletando amostra do sensor de corrente #{contador+1}")
+    contador += 1
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag exercicio">Exercício</span>
+                            <span class="nome-atv">Atividades 16 a 20: Matrizes e Manipulação Avançada</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at1620-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at1620-codigo')">💻 Códigos</button>
+                            </div>
+                            <div id="at1620-enunciado" class="tab-content active">
+                                <p>Bloco focado em estruturas bidimensionais (matrizes) para representação de malhas elétricas complexas e sistemas de coordenadas:</p>
+                                <p><em>Atv 16 e 17:</em> Leitura e preenchimento dinâmico de matrizes numéricas.</p>
+                                <p><em>Atv 18, 19 e 20:</em> Operações matriciais avançadas (soma de linhas, colunas e diagonais principais).</p>
+                            </div>
+                            <div id="at1620-codigo" class="tab-content">
+                                <pre>
+# Estruturação básica de uma matriz 2x2 para coeficientes de sistemas
+matriz_sistema = [
+    [2, 4],
+    [5, 1]
+]
+print("Matriz de coeficientes carregada em memória.")
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag prova">Prova</span>
+                            <span class="nome-atv">Atividades 21, 22 e 23: Portfólio v1 e Avaliações</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at2123-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at2123-codigo')">💻 Resultados</button>
+                            </div>
+                            <div id="at2123-enunciado" class="tab-content active">
+                                <p><strong>Atv 21:</strong> Avaliação Escrita Individual (Prova Presencial em Laboratório).</p>
+                                <p><strong>Atv 22:</strong> Correção estruturada e refatoração das questões da avaliação.</p>
+                                <p><strong>Atv 23:</strong> Criação e publicação da primeira versão estruturada do Portfólio de Aprendizagem no ecossistema GitHub Pages.</p>
+                            </div>
+                            <div id="at2123-codigo" class="tab-content">
+                                <p>Primeira versão publicada com sucesso e registrada através da hash de commit correspondente para avaliação docente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-atividade">
+                        <div class="atividade-topo">
+                            <span class="tag projeto">Projeto</span>
+                            <span class="nome-atv">Atividade 24: Evolução do Portfólio (Design e Integração IAs)</span>
+                        </div>
+                        <div class="tabs-container">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" onclick="openTab(event, 'at24-enunciado')">📋 O que foi pedido</button>
+                                <button class="tab-btn" onclick="openTab(event, 'at24-codigo')">💻 Tecnologias Integradas</button>
+                            </div>
+                            <div id="at24-enunciado" class="tab-content active">
+                                <p><strong>Enunciado:</strong> Evoluir o design e usabilidade do site após a troca de ideias e feedback com colegas em sala de aula. Identificar explicitamente todas as tecnologias de IA generativas utilizadas para a criação e refatoração das páginas de código.</p>
+                            </div>
+                            <div id="at24-codigo" class="tab-content">
+                                <p><strong>Tecnologias de Inteligência Artificial Utilizadas no Desenvolvimento:</strong></p>
+                                <ul style="margin-left: 20px; margin-top: 5px;">
+                                    <li>🤖 GPT Versão 4o (Estruturação e lógica inicial)</li>
+                                    <li>🤖 Claude Versão 3.5 Sonnet (Refinamento estético aquarela e apostilas)</li>
+                                    <li>🤖 Gemini Versão 1.5 Pro (Criação do sistema completo de abas dinâmicas)</li>
+                                </ul>
+                                <p style="margin-top: 10px;"><strong>Tecnologias Web aplicadas:</strong> HTML5 Estrutural, CSS3 Fluido (Flexbox e Grid) e Javascript Dinâmico para controle de escopo das abas.</p>
                             </div>
                         </div>
                     </div>
@@ -468,9 +616,9 @@ print(f"A média dos valores medidos é: {media}")
             <div class="widget">
                 <h3>🔔 Status das Atividades</h3>
                 <ul class="lembretes-list">
-                    <li class="urgente">🚨 Prova 2 agendada para o próximo mês!</li>
-                    <li class="importante">✅ Trabalho prático em grupo enviado.</li>
-                    <li class="normal">📚 Revisar conteúdos de matrizes e vetores.</li>
+                    <li class="importante">✅ Todas as 24 atividades descritas foram compiladas e integradas.</li>
+                    <li class="importante">✅ Sistema de abas dinâmicas integrado com sucesso.</li>
+                    <li class="normal">📚 Revisar códigos para a validação final da disciplina.</li>
                 </ul>
             </div>
 
@@ -487,7 +635,7 @@ print(f"A média dos valores medidos é: {media}")
     </div>
 
     <footer>
-        <p>Desenvolvido por Maria Frandalozzo &copy; 2026</p>
+        <p>Desenvolvido por Maria Frandalozzo &copy; 2026 | Unipampa</p>
     </footer>
 
     <script>
