@@ -49,14 +49,12 @@
             padding: 0 20px;
         }
 
-        /* Estrutura de Duas Colunas Perfeita */
         .grid-atividades {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
-        /* Cartões Estilo Aquarela */
         .card {
             background: white;
             border-radius: 20px;
@@ -172,7 +170,7 @@
 
             <div class="card">
                 <div>
-                    <h3>2 Atividade: QUIZ - Lógica preparatório</h3>
+                    <h3>2 Atividade: QUIZ - Lógica Preparatório</h3>
                     <div class="detalhes">
                         <p><strong>Objetivo:</strong> Teste preparatório em sala de aula abordando lógica de programação.</p>
                         <p><strong>Descrição:</strong> Exercícios de fixação rápidos feitos em conjunto.</p>
@@ -181,7 +179,7 @@
                 <div class="acoes">
                     <button class="btn btn-ver" onclick="toggleCod('cod2')">Ver Resposta</button>
                 </div>
-                <div id="cod2" class="codigo-area">Quiz realizado e validado com o professor.</div>
+                <div id="cod2" class="codigo-area">Quiz realizado e validado com o professor Diego.</div>
             </div>
 
             <div class="card">
@@ -189,7 +187,7 @@
                     <h3>3 Atividade: QUIZ - Diagnóstico de Lógica</h3>
                     <div class="detalhes">
                         <p><strong>Objetivo:</strong> Avaliação do nível individual de retenção de estruturas lógicas simples.</p>
-                        <p><strong>Descrição:</strong> Teste oficial de lógica aplicada.</p>
+                        <p><strong>Descrição:</strong> Teste oficial de lógica aplicada no início do semestre.</p>
                     </div>
                 </div>
                 <div class="acoes">
@@ -203,20 +201,17 @@
                     <h3>4 Atividade: 15 Exercícios de Lógica</h3>
                     <div class="detalhes">
                         <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 15 exercícios de lógica/algoritmos básicos com estruturas condicionais simples voltadas para Engenharia.</p>
-                        <p><strong>Descrição:</strong> Resoluções manuscritas anexadas abaixo:</p>
-                        
+                        <p><strong>Descrição:</strong> Resoluções manuscritas salvas no arquivo de portfólio.</p>
                         <div class="foto-container">
-                            <img src="imagem1.png" alt="Exercícios 1 a 8">
-                            <img src="imagem2.png" alt="Exercícios 9 a 15" style="margin-top:10px;">
-                            <img src="imagem3.png" alt="Resoluções 1 a 8" style="margin-top:10px;">
-                            <img src="imagem4.png" alt="Resoluções 9 a 15" style="margin-top:10px;">
+                            <p style="font-size:0.85em; margin:5px 0;">[Área reservada para as Imagens dos Manuscritos]</p>
                         </div>
                     </div>
                 </div>
                 <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod4')">Ver Exemplo</button>
+                    <button class="btn btn-ver" onclick="toggleCod('cod4')">Ver Código</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade4.py', '# Exercício de Tensão\ntensao = float(input(\'Tensão (V): \'))\nif tensao > 220:\n    print(\'Alerta: Alta Tensão!\')\nelse:\n    print(\'Tensão segura.\')')">Download .PY</button>
                 </div>
-                <div id="cod4" class="codigo-area"># Exemplo de Condicional simples para Engenharia:
+                <div id="cod4" class="codigo-area"># Exemplo de Condicional para Engenharia Elétrica:
 tensao = float(input("Digite a tensão (V): "))
 if tensao > 220:
     print("Alerta: Alta Tensão!")
@@ -228,60 +223,67 @@ else:
                 <div>
                     <h3>5 Atividade: Introdução com Python</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Resolver no mínimo 10 exercícios da apostila prática usando Python.</p>
-                        <p><strong>Descrição:</strong> Transposição dos algoritmos corrigindo a acentuação textual trazida pelo Claude.ai.</p>
+                        <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 10 exercícios da apostila INTRODUCAO A ALGORITMOS com Python, criada em aula pelo Claude.ai.</p>
+                        <p><strong>Descrição:</strong> Resolução completa dos algoritmos corrigindo a acentuação textual trazida pela IA.</p>
                     </div>
                 </div>
                 <div class="acoes">
                     <button class="btn btn-ver" onclick="toggleCod('cod5')">Ver Código</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade5.py', '# Exercício Apostila\nresistencia = 47\ncorrente = 2\npotencia = resistencia * (corrente ** 2)\nprint(f\'Potência: {potencia} W\')')">Download .PY</button>
                 </div>
-                <div id="cod5" class="codigo-area"># Exercicio resolvido da apostila:
-print("Algoritmos em Python executados com sucesso.")</div>
+                <div id="cod5" class="codigo-area"># Exercício resolvido da apostila:
+resistencia = float(input("Resistência (Ohms): "))
+corrente = float(input("Corrente (Amperes): "))
+potencia = resistencia * (corrente ** 2)
+print(f"A potência dissipada calculada é: {potencia} W")</div>
             </div>
 
             <div class="card">
                 <div>
                     <h3>6 Atividade: Exercícios com LLMs</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Usar 3 LLMs diferentes para gerar 10 exercícios aplicados às Engenharias Elétrica, Mecânica e Telecomunicações.</p>
-                        <p><strong>Descrição:</strong> Análise comparativa crítica sobre enunciados, pseudocódigos e Python.</p>
+                        <p><strong>Objetivo:</strong> Usar 3 LLMs para gerar 10 exercícios com enunciado contextualizado, pseudocódigo e código em Python distribuídos entre Elétrica, Mecânica e Telecomunicações.</p>
+                        <p><strong>Descrição:</strong> Análise comparativa qualitativa sobre os enunciados e códigos produzidos.</p>
                     </div>
                 </div>
                 <div class="acoes">
                     <button class="btn btn-ver" onclick="toggleCod('cod6')">Ver Resposta</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade6_analise.txt', 'Relatório de Avaliação Crítica das LLMs - Algoritmos')">Download TXT</button>
                 </div>
-                <div id="cod6" class="codigo-area">Análise efetuada. O modelo Gemini apresentou melhores respostas contextuais para Engenharia Elétrica.</div>
+                <div id="cod6" class="codigo-area">Análise efetuada. O modelo Gemini apresentou melhores respostas contextuais para as aplicações de Engenharia Elétrica.</div>
             </div>
 
             <div class="card">
                 <div>
                     <h3>7 Atividade: Quiz de Avaliação da Experiência</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Coletar a percepção sobre o processo de realização da atividade com inteligências artificiais.</p>
-                        <p><strong>Descrição:</strong> Feedback sobre facilidades e dificuldades encontradas.</p>
+                        <p><strong>Objetivo:</strong> Coletar a percepção discente sobre o processo de realização da atividade de Algoritmos utilizando LLMs.</p>
+                        <p><strong>Descrição:</strong> Diagnóstico de facilidades e barreiras no uso pedagógico das IAs.</p>
                     </div>
                 </div>
                 <div class="acoes">
                     <button class="btn btn-ver" onclick="toggleCod('cod7')">Ver Resposta</button>
                 </div>
-                <div id="cod7" class="codigo-area">Questionário respondido no Classroom.</div>
+                <div id="cod7" class="codigo-area">Questionário de experiência enviado com sucesso no Classroom.</div>
             </div>
 
             <div class="card">
                 <div>
                     <h3>8 Atividade: 5 Exercícios em Papel</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Resolver 5 exercícios em papel, tirar foto e usar no mínimo 2 LLMs para interpretar a resolução manual.</p>
-                        <p><strong>Descrição:</strong> Avaliação e geração de códigos Python correspondentes pelas IAs.</p>
+                        <p><strong>Objetivo:</strong> Resolver 5 exercícios em papel, digitalizar e usar no mínimo 2 LLMs para interpretar a resolução e gerar o código Python correspondente.</p>
+                        <p><strong>Descrição:</strong> Avaliação comparativa entre os códigos gerados pelas ferramentas de IA.</p>
                     </div>
                 </div>
                 <div class="acoes">
                     <button class="btn btn-ver" onclick="toggleCod('cod8')">Ver Código</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade8_ia.py', '# Código gerado via imagem\nprint(\'Lógica manuscrita validada por IA\')')">Download .PY</button>
                 </div>
-                <div id="cod8" class="codigo-area">Exercícios resolvidos à mão e interpretados com sucesso pelas IAs.</div>
+                <div id="cod8" class="codigo-area"># Lógica avaliada pelas ferramentas de IA:
+# Resoluções em papel interpretadas e convertidas de forma coerente.</div>
             </div>
 
-        </div>
+            </div>
     </main>
 
     <footer>
@@ -292,6 +294,16 @@ print("Algoritmos em Python executados com sucesso.")</div>
         function toggleCod(id) {
             var area = document.getElementById(id);
             area.style.display = (area.style.display === "block") ? "none" : "block";
+        }
+
+        function downloadAtv(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
         }
     </script>
 </body>
