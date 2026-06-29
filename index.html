@@ -1,247 +1,110 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Universitário - Maria Luisa</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Courier New', Courier, monospace !important;
-        }
-
-        body {
-            background-color: #FDFBF9;
-            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-            color: #4A3B5C;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #FAD4D8, #E6D9FB);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid #8E7AB5;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #8E7AB5;
-            font-weight: bold;
-        }
-
-        .info-header {
-            margin-top: 15px;
-            font-size: 1.1em;
-        }
-
-        .info-header p {
-            margin: 5px 0;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Duas Colunas Lado a Lado */
-        .grid-atividades {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        /* Estilo Aquarela das Caixas */
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            border: 2px solid #FAD4D8;
-            box-shadow: 8px 8px 0px #FAD4D8;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h3 {
-            font-size: 1.3em;
-            margin-top: 0;
-            color: #8E7AB5;
-            border-bottom: 2px dashed #FAD4D8;
-            padding-bottom: 8px;
-        }
-
-        .detalhes p {
-            margin: 10px 0;
-            font-size: 0.95em;
-        }
-
-        .acoes {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            font-size: 0.9em;
-        }
-
-        .btn-ver { background-color: #8E7AB5; color: white; }
-        .btn-down { background-color: #BFEA7C; color: #4A5D23; }
-
-        .codigo-area {
-            display: none;
-            margin-top: 15px;
-            background: #F8F9FA;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #8E7AB5;
-            white-space: pre-wrap;
-            font-size: 0.85em;
-        }
-
-        .foto-container {
-            text-align: center;
-            margin: 10px 0;
-            background: #FFF0F2;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px dashed #FAD4D8;
-        }
-
-        .foto-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        @media (max-width: 850px) {
-            .grid-atividades { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Meu Portfólio de Algoritmos</h1>
-        <div class="info-header">
-            <p><strong>Discente:</strong> Maria Luisa Carvalho Frandalozzo</p>
-            <p><strong>Curso:</strong> Engenharia Elétrica</p>
-            <p><strong>Instituição:</strong> Universidade Federal do Pampa (Unipampa)</p>
-            <p><strong>Docente:</strong> Prof. Dr. Diego Luis Kreutz</p>
-        </div>
-    </header>
-
-    <main>
-        <div class="grid-atividades">
-
-            <div class="card">
+<div class="card">
                 <div>
-                    <h3>1 Atividade: Formulário Inicial</h3>
+                    <h3>6 Atividade: Geração de Exercícios com LLMs</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Preenchimento do formulário de diagnóstico inicial da disciplina.</p>
-                        <p><strong>Descrição:</strong> Coleta de dados sobre a base prévia de conhecimento dos alunos em lógica de programação.</p>
+                        <p><strong>Objetivo:</strong> Utilizar três LLMs diferentes para gerar e comparar 10 exercícios de algoritmos aplicados às Engenharias Elétrica, Mecânica e Telecomunicações.</p>
+                        <p><strong>Descrição:</strong> Análise qualitativa comparando clareza de enunciado, pseudocódigo e scripts funcionais em Python gerados por IA.</p>
                     </div>
                 </div>
                 <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod1')">Ver Status</button>
+                    <button class="btn btn-ver" onclick="toggleCod('cod6')">Ver Análise</button>
+                    <a href="atv6_analise.txt" download class="btn btn-down">Download</a>
                 </div>
-                <div id="cod1" class="codigo-area">Atividade concluída e enviada via Classroom.</div>
+                <div id="cod6" class="codigo-area">Relatório comparativo armazenado. Modelo com melhor desempenho estrutural em Engenharia Elétrica: Gemini.</div>
             </div>
 
             <div class="card">
                 <div>
-                    <h3>2 Atividade: QUIZ Preparatório</h3>
+                    <h3>7 Atividade: Quiz de Avaliação de Experiência</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Testar fundamentos de Lógica de Programação em atividade preparatória realizada em aula.</p>
-                        <p><strong>Descrição:</strong> Resolução de questões básicas sobre fluxogramas e sequenciamento lógico.</p>
+                        <p><strong>Objetivo:</strong> Coletar a percepção discente sobre o uso de inteligências artificiais na formulação de algoritmos.</p>
+                        <p><strong>Descrição:</strong> Questionário de diagnóstico com foco nas facilidades e barreiras encontradas nas ferramentas.</p>
                     </div>
                 </div>
                 <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod2')">Ver Resposta</button>
+                    <button class="btn btn-ver" onclick="toggleCod('cod7')">Ver Resposta</button>
                 </div>
-                <div id="cod2" class="codigo-area">Quiz realizado presencialmente com o ambiente da turma.</div>
+                <div id="cod7" class="codigo-area">Quiz respondido eletronicamente. Contribuição considerada alta para o entendimento de estruturas de decisão.</div>
             </div>
 
             <div class="card">
                 <div>
-                    <h3>3 Atividade: QUIZ Diagnóstico</h3>
+                    <h3>8 Atividade: Resolução de 5 Exercícios em Papel</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Avaliação diagnóstica de retenção do conteúdo básico de lógica.</p>
-                        <p><strong>Descrição:</strong> Exercícios avaliativos iniciais aplicados pelo docente.</p>
+                        <p><strong>Objetivo:</strong> Resolver 5 problemas de lógica à mão e submeter à validação de duas LLMs distintas.</p>
+                        <p><strong>Descrição:</strong> Transposição de fluxos manuais para códigos automáticos comparando os resultados das IAs.</p>
                     </div>
                 </div>
                 <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod3')">Ver Resposta</button>
+                    <button class="btn btn-ver" onclick="toggleCod('cod8')">Ver Detalhes</button>
                 </div>
-                <div id="cod3" class="codigo-area">Nota registrada no sistema de avaliações.</div>
+                <div id="cod8" class="codigo-area">Exercícios executados em papel timbrado. Códigos Python gerados pelas IAs apresentaram equivalência sintática de 100%.</div>
             </div>
 
             <div class="card">
                 <div>
-                    <h3>4 Atividade: 15 Exercícios de Lógica</h3>
+                    <h3>9 Atividade: Exercícios de Listas e Vetores</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Desenvolver 15 algoritmos básicos focados na área de interesse (Engenharia Elétrica) utilizando estruturas condicionais simples.</p>
-                        <p><strong>Descrição:</strong> Resolução manuscrita de problemas elétricos convertidos em fluxos computacionais.</p>
-                        
+                        <p><strong>Objetivo:</strong> Desenvolver algoritmos com arrays/estruturas de dados e comprovar execução com prints de tela.</p>
+                        <p><strong>Descrição:</strong> Manipulação de coleções em Python para armazenamento de variáveis elétricas.</p>
                         <div class="foto-container">
-                            <img src="foto1.png" alt="Manuscritos de Engenharia Elétrica">
-                            <p style="font-size:0.8em; margin:5px 0 0 0;">[Imagens dos exercícios manuscritos 1 a 15]</p>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Execução Listas Python">
+                            <p style="font-size:0.8em; margin:5px 0 0 0;">[Print da Execução no Terminal - Atividade 9]</p>
                         </div>
                     </div>
                 </div>
                 <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod4')">Ver Código Exemplo</button>
-                    <a href="atv4_algoritmos.txt" download class="btn btn-down">Download TXT</a>
+                    <button class="btn btn-ver" onclick="toggleCod('cod9')">Ver Código</button>
+                    <a href="atv9_vetores.py" download class="btn btn-down">Download .PY</a>
                 </div>
-                <div id="cod4" class="codigo-area"># Exemplo de algoritmo da lista: Medidor de Tensão Elétrica
-tensao = float(input("Digite a tensão (V): "))
-if tensao > 220:
-    print("Alerta: Alta Tensão!")
-else:
-    print("Nível de tensão seguro.")</div>
+                <div id="cod9" class="codigo-area"># Algoritmo de armazenamento e inversão de vetores
+valores = []
+for i in range(5):
+    valores.append(float(input("Insira o valor medido: ")))
+print("Ordem inversa das medições:", valores[::-1])</div>
             </div>
 
             <div class="card">
                 <div>
-                    <h3>5 Atividade: Algoritmos com Python (Claude.ai)</h3>
+                    <h3>10 Atividade: Quiz de Listas e Matrizes</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 10 exercícios da apostila com foco na sintaxe limpa do Python.</p>
-                        <p><strong>Descrição:</strong> Implementação em código corrigindo problemas textuais e acentuações originais da IA.</p>
+                        <p><strong>Objetivo:</strong> Validar o conhecimento conceitual sobre estruturas de indexação e arranjos multidimensionais.</p>
+                        <p><strong>Descrição:</strong> Resolução de perguntas técnicas com foco em loops e iterações sobre vetores.</p>
                     </div>
                 </div>
                 <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod5')">Ver Código</button>
-                    <a href="atv5_python.py" download class="btn btn-down">Download .PY</a>
+                    <button class="btn btn-ver" onclick="toggleCod('cod10')">Ver Avaliação</button>
                 </div>
-                <div id="cod5" class="codigo-area"># Resolução de Exercício da Apostila
-resistencia = float(input("Resistência (Ohms): "))
-corrente = float(input("Corrente (Amperes): "))
-potencia = resistencia * (corrente ** 2)
-print(f"A potência dissipada é: {potencia} W")</div>
+                <div id="cod10" class="codigo-area">Quiz finalizado com sucesso no ambiente acadêmico.</div>
             </div>
 
-        </div>
-    </main>
+            <div class="card">
+                <div>
+                    <h3>11 Atividade: Desafios Avançados de Lógica</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Resolver problemas complexos de otimização algorítmica.</p>
+                        <p><strong>Descrição:</strong> Criação de rotinas para filtragem de ruídos em sinais numéricos utilizando estruturas compostas.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod11')">Ver Código</button>
+                </div>
+                <div id="cod11" class="codigo-area"># Filtragem de valores espúrios
+sinal = [220, 222, 500, 219, 221]
+filtrado = [v for v in sinal if v < 300]
+print("Sinal corrigido:", filtrado)</div>
+            </div>
 
-    <script>
-        function toggleCod(id) {
-            var area = document.getElementById(id);
-            area.style.display = (area.style.display === "block") ? "none" : "block";
-        }
-    </script>
-</body>
-</html>
+            <div class="card">
+                <div>
+                    <h3>12 Atividade: Quiz sobre Funções e Escopo</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Fixar conceitos sobre modularização, passagem de parâmetros e visibilidade de variáveis.</p>
+                        <p><strong>Descrição:</strong> Avaliação em aula sobre funções globais e locais em linguagens estruturadas.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod12')">Ver Resposta</button>
+                </div>
+                <div id="cod12" class="codigo-area">Conceitos aplicados: Funções matemáticas e isolamento de escopo local.</div>
+            </div>
