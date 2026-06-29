@@ -3,242 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Aquarela - Maria Luisa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Meu Portfólio de Entregas - Algoritmos e Programação</title>
     <style>
         :root {
-            --roxo-aquarela: #8E7AB5;
-            --rosa-suave: #FAD4D8;
-            --verde-menta: #BFEA7C;
-            --bg-papel: #FDFBF9;
-            --texto: #4A3B5C;
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
         }
 
         body {
-            font-family: 'Quicksand', sans-serif;
-            background-color: var(--bg-papel);
-            /* Efeito de textura de papel artesanal */
-            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-            color: var(--texto);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, var(--rosa-suave), #E6D9FB);
-            padding: 50px 20px;
+            background-color: var(--primary-color);
+            color: white;
             text-align: center;
-            border-bottom: 5px solid var(--roxo-aquarela);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5em;
             margin: 0;
-            color: var(--roxo-aquarela);
+            font-size: 2.2rem;
         }
 
-        .info-header {
-            margin-top: 15px;
-            font-size: 1.1em;
-            line-height: 1.6;
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
-
-        .info-header strong { color: var(--roxo-aquarela); }
 
         main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-        /* Estrutura de Duas Colunas Responsiva */
-        .container-atividades {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+        .activity-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 5px solid var(--accent-color);
         }
 
-        /* Card Estilo Aquarela */
-        .card {
-            background: white;
-            border-radius: 30px 10px 30px 10px; /* Bordas orgânicas */
-            padding: 30px;
-            border: 2px solid var(--rosa-suave);
-            box-shadow: 10px 10px 0px var(--rosa-suave);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 1.4em;
-            font-weight: 700;
+        .activity-card h2 {
             margin-top: 0;
-            color: var(--roxo-aquarela);
-            border-bottom: 2px solid var(--rosa-suave);
-            padding-bottom: 8px;
+            color: var(--primary-color);
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 0.5rem;
         }
 
-        .meta-info {
-            font-size: 0.85em;
-            color: #888;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .autor {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 15px;
+        .objective {
+            background-color: #e8f4fd;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
             font-style: italic;
         }
 
-        .detalhes p {
-            margin: 10px 0;
-            font-size: 0.95em;
-            line-height: 1.6;
+        .objective strong {
+            color: var(--primary-color);
         }
 
-        /* Botões Interativos */
-        .acoes {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
+        .image-container {
             text-align: center;
-            transition: all 0.3s;
-            font-size: 0.9em;
+            margin: 1.5rem 0;
+            background-color: #f1f2f6;
+            padding: 1rem;
+            border-radius: 6px;
         }
 
-        .btn-ver { background-color: var(--roxo-aquarela); color: white; }
-        .btn-down { background-color: var(--verde-menta); color: #4A5D23; }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
-        .btn:hover { opacity: 0.8; transform: scale(1.03); }
+        .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
 
-        /* Área de Código Escondida */
-        .codigo-area {
-            display: none;
-            margin-top: 15px;
-            background: #F8F9FA;
-            padding: 15px;
-            border-radius: 10px;
+        .code-block {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 1.2rem;
+            border-radius: 6px;
             font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9em;
-            border-left: 4px solid var(--roxo-aquarela);
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .pseudocode {
+            background-color: #f5f6fa;
+            border: 1px dashed #b2bec3;
+            color: #2f3640;
+            padding: 1.2rem;
+            border-radius: 6px;
+            font-family: Consolas, Monaco, monospace;
             white-space: pre-wrap;
+            margin: 1rem 0;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.6em;
-            color: var(--roxo-aquarela);
-        }
-
-        /* Ajuste para Celular */
-        @media (max-width: 850px) {
-            .container-atividades { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.5em; }
+            padding: 2rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Meu Portfólio Acadêmico</h1>
-        <div class="info-header">
-            <p><strong>Discente:</strong> Maria Luisa Carvalho Frandalozzo</p>
-            <p><strong>Curso:</strong> Engenharia Elétrica</p>
-            <p><strong>Instituição:</strong> Universidade Federal do Pampa (Unipampa)</p>
-            <p><strong>Docente:</strong> Prof. Dr. Diego Luis Kreutz</p>
-        </div>
+        <h1>Portfólio de Entregas</h1>
+        <p>Desenvolvimento Científico e Tecnológico em Algoritmos | Disciplina Prática</p>
     </header>
 
     <main>
-        <div class="container-atividades">
 
-            <div class="card">
-                <div>
-                    <div class="meta-info">Entrega 01</div>
-                    <h3>Nome da Primeira Atividade</h3>
-                    <p class="autor">Autor: Maria Luisa C. Frandalozzo</p>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Cole aqui o objetivo desta atividade que está no seu PDF.</p>
-                        <p><strong>Tecnologias Utilizadas:</strong> Cite os componentes, softwares ou linguagens usadas.</p>
-                        <p><strong>Resultados Obtidos:</strong> Descreva brevemente o resultado ou conclusão da atividade.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="acoes">
-                        <button class="btn btn-ver" onclick="toggleCodigo('cod1')">Ver Resposta</button>
-                        <a href="LINK_DO_SEU_ARQUIVO" download class="btn btn-down">Download Artefato</a>
-                    </div>
-                    <div id="cod1" class="codigo-area">
-/* Cole aqui o código ou resposta detalhada desta atividade */
-print("Exemplo de código ou resposta interativa");
-                    </div>
-                </div>
+        <section class="activity-card">
+            <h2>Atividade 4: Exercícios de Lógica (Engenharia Elétrica)</h2>
+            <div class="objective">
+                <strong>Objetivo da Atividade:</strong> Escolher e resolver no mínimo 15 exercícios de lógica e algoritmos básicos envolvendo estruturas condicionais simples contextualizados na área de interesse[cite: 155, 156].
             </div>
 
-            <div class="card">
-                <div>
-                    <div class="meta-info">Entrega 02</div>
-                    <h3>Nome da Segunda Atividade</h3>
-                    <p class="autor">Autor: Maria Luisa C. Frandalozzo</p>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Cole aqui o objetivo da segunda atividade que está no seu PDF.</p>
-                        <p><strong>Tecnologias Utilizadas:</strong> Softwares, fórmulas ou ferramentas aplicadas.</p>
-                        <p><strong>Resultados Obtidos:</strong> Resultados gerados, gráficos ou conclusões obtidas.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="acoes">
-                        <button class="btn btn-ver" onclick="toggleCodigo('cod2')">Ver Resposta</button>
-                        <a href="LINK_DO_SEU_ARQUIVO" download class="btn btn-down">Download Artefato</a>
-                    </div>
-                    <div id="cod2" class="codigo-area">
-/* Cole aqui o código ou resposta detalhada da segunda atividade */
-                    </div>
-                </div>
+            <h3>1. Enunciados Escolhidos (Manuscritos)</h3>
+            <div class="image-container">
+                <img src="exercicios_1_a_8.png" alt="Lista de Exercícios 1 a 8">
+                <div class="image-caption">Figura 1: Exercícios de 1 a 8 formulados para Engenharia Elétrica.</div>
             </div>
 
-        </div>
+            <div class="image-container">
+                <img src="exercicios_9_a_15.png" alt="Lista de Exercícios 9 a 15">
+                <div class="image-caption">Figura 2: Exercícios de 9 a 15 formulados para Engenharia Elétrica.</div>
+            </div>
+
+            <h3>2. Resolução Manual (Pseudocódigo / Lógica)</h3>
+            <div class="image-container">
+                <img src="respostas_1_a_8.png" alt="Respostas Manuscritas 1 a 8">
+                <div class="image-caption">Figura 3: Algoritmos em pseudocódigo (Exercícios 1 a 8).</div>
+            </div>
+
+            <div class="image-container">
+                <img src="respostas_9_a_15.png" alt="Respostas Manuscritas 9 a 15">
+                <div class="image-caption">Figura 4: Algoritmos em pseudocódigo (Exercícios 9 a 15).</div>
+            </div>
+
+            <h3>3. Transcrição da Lógica das Respostas</h3>
+            <div class="pseudocode">
+<strong>Exemplo de Fluxo Lógico Utilizado (Exercício 1 - Tensão Segura):</strong>
+Leia tensao
+Se tensao > 220 entao
+    escreva "Perigo alta Tensao"
+Se nao
+    escreva "Tensao segura"
+Fimse
+
+<strong>Nota de Aprendizado de Aula:</strong>
+O uso do bloco 'IF' (se) faz uma pergunta condicional e o 'ELSE' (senão) traz a resposta alternativa. O IF é usado quando o programa precisa decidir o que fazer com base em uma medição ou dado coletado.
+            </div>
+
+            <h3>4. Implementações em Python</h3>
+            <p>Abaixo estão as soluções programadas e validadas em ambiente Python:</p>
+            <pre class="code-block">
+# Exercício 1: Tensão Segura
+tensao = float(input("Digite a tensão medida (V): "))
+if tensao > 220:
+    print("Perigo: alta tensão!")
+else:
+    print("Tensão segura.")
+
+# Exercício 2: Corrente em Resistor
+corrente = float(input("Digite a corrente medida (A): "))
+if corrente > 10:
+    print("Sobrecarga!")
+else:
+    print("Operação normal.")
+
+# Cole aqui os códigos dos demais exercícios (3 ao 15) conforme sua implementação!
+            </pre>
+        </section>
+
+        <section class="activity-card">
+            <h2>Atividade 5: Introdução a Algoritmos com Python</h2>
+            <div class="objective">
+                <strong>Objetivo da Atividade:</strong> Resolver no mínimo 10 exercícios da apostila prática de algoritmos utilizando a linguagem de programação Python[cite: 164, 165].
+            </div>
+            
+            <h3>Resolução dos Exercícios</h3>
+            <p>Os scripts foram construídos prezando pela limpeza das variáveis e legibilidade do código de programação:</p>
+            <pre class="code-block">
+# [Exemplo de Script Executado]
+# Declaração de variáveis de engenharia e operações matemáticas
+resistencia = 47  # ohms
+corrente_nominal = 1.5  # amperes
+
+potencia_calculada = resistencia * (corrente_nominal ** 2)
+print(f"Potência dissipada calculada: {potencia_calculada} W")
+            </pre>
+        </section>
+
+        <section class="activity-card">
+            <h2>Atividade 9: Listas, Vetores e Arrays em Python</h2>
+            <div class="objective">
+                <strong>Objetivo da Atividade:</strong> Implementar e executar algoritmos estruturados com vetores/arrays em Python, comprovando as execuções por meio de capturas de tela[cite: 213, 214].
+            </div>
+
+            <h3>Evidência de Execução no Ambiente de Desenvolvimento</h3>
+            <div class="image-container">
+                <img src="Screenshot_20260423-184147.png" alt="Execução de Listas em Python">
+                <div class="image-caption">Figura 5: Terminal comprovando a correta alimentação e manipulação das listas de medições e temperaturas.</div>
+            </div>
+
+            <pre class="code-block">
+# Trecho do algoritmo validado para análise de dados agregados
+temperaturas = []
+temperaturas.append(22)
+temperaturas.append(24)
+temperaturas.append(26)
+
+print(f"Temperaturas registradas: {temperaturas}")
+print(f"Maior temperatura: {max(temperaturas)}°C")
+            </pre>
+        </section>
+
     </main>
 
     <footer>
-        Desenvolvido por Maria Luisa Carvalho Frandalozzo &copy; 2026
+        <p>&copy; 2026 - Desenvolvido por Maria Luisa Carvalho Frandalozzo como Portfólio Acadêmico[cite: 115].</p>
     </footer>
 
-    <script>
-        // Função para mostrar/esconder a área de resposta
-        function toggleCodigo(id) {
-            var area = document.getElementById(id);
-            if (area.style.display === "block") {
-                area.style.display = "none";
-            } else {
-                area.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
