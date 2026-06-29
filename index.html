@@ -79,6 +79,20 @@
             font-size: 0.95em;
         }
 
+        .ex-manuscrito {
+            background-color: #FAF6FF;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #E6D9FB;
+        }
+
+        .ex-manuscrito h4 {
+            margin: 0 0 5px 0;
+            color: #4A3B5C;
+            font-size: 1em;
+        }
+
         .acoes {
             display: flex;
             gap: 10px;
@@ -118,12 +132,6 @@
             padding: 10px;
             border-radius: 8px;
             border: 1px dashed #FAD4D8;
-        }
-
-        .foto-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
         }
 
         footer {
@@ -196,40 +204,212 @@
                 <div id="cod3" class="codigo-area">Quiz concluído no sistema da universidade.</div>
             </div>
 
-            <div class="card">
+            <div class="card" style="grid-column: span 2;">
                 <div>
-                    <h3>4 Atividade: 15 Exercícios de Lógica</h3>
+                    <h3>4 Atividade: 15 Exercícios de Lógica (Sua Resolução)</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 15 exercícios de lógica/algoritmos básicos com estruturas condicionais simples voltadas para Engenharia.</p>
-                        <p><strong>Descrição:</strong> Resoluções manuscritas salvas no arquivo de portfólio.</p>
+                        <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 15 exercícios de lógica/algoritmos básicos com estruturas condicionais simples voltadas para Engenharia Elétrica.</p>
+                        
                         <div class="foto-container">
-                            <p style="font-size:0.85em; margin:5px 0;">[Área reservada para as Imagens dos Manuscritos]</p>
+                            <p style="font-size:0.85em; margin:5px 0; font-weight:bold; color:#8E7AB5;">📸 [Espaço Reservado para Anexar suas Imagens Laterais Depois]</p>
                         </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>1. Tensão Segura</h4>
+                            <p><strong>Sua Resolução:</strong> Leia tensao. Se tensao > 220 entao escreva "Perigo alta tensao", Se nao escreva "Tensao segura", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex1')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex1_tensao.py', 'tensao = float(input(\'Tensão: \'))\nif tensao > 220:\n    print(\'Perigo alta tensão\')\nelse:\n    print(\'Tensão segura\')')">Baixar .PY</button>
+                            <div id="codex1" class="codigo-area">tensao = float(input("Digite a tensão do circuito: "))
+if tensao > 220:
+    print("Perigo alta tensão")
+else:
+    print("Tensão segura")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>2. Corrente em Resistor</h4>
+                            <p><strong>Sua Resolução:</strong> Leia corrente. Se corrente > 10 entao escreva "Sobrecarga", Se nao escreva "Operação normal", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex2')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex2_corrente.py', 'corrente = float(input(\'Corrente: \'))\nif corrente > 10:\n    print(\'Sobrecarga\')\nelse:\n    print(\'Operação normal\')')">Baixar .PY</button>
+                            <div id="codex2" class="codigo-area">corrente = float(input("Leia a corrente (A): "))
+if corrente > 10:
+    print("Sobrecarga")
+else:
+    print("Operação normal")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>3. Estado de um Disjuntor</h4>
+                            <p><strong>Sua Resolução:</strong> Leia disjuntor. Se disjuntor == 1 entao escreva "Disjuntor ligado", senao escreva "Disjuntor desligado", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex3')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex3_disjuntor.py', 'disjuntor = int(input(\'Disjuntor: \'))\nif disjuntor == 1:\n    print(\'Disjuntor ligado\')\nelse:\n    print(\'Disjuntor desligado\')')">Baixar .PY</button>
+                            <div id="codex3" class="codigo-area">disjuntor = int(input("Leia um valor (1 para ligado, 0 para desligado): "))
+if disjuntor == 1:
+    print("Disjuntor ligado")
+else:
+    print("Disjuntor desligado")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>4. Temperatura de Equipamento</h4>
+                            <p><strong>Sua Resolução:</strong> Leia temperatura. Se temperatura > 70 entao escreva "Superaquecimento", senao escreva "Temperatura normal", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex4')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex4_temp.py', 'temp = float(input(\'Temp: \'))\nif temp > 70:\n    print(\'Superaquecimento\')\nelse:\n    print(\'Temperatura normal\')')">Baixar .PY</button>
+                            <div id="codex4" class="codigo-area">temperatura = float(input("Leia a temperatura (°C): "))
+if temperatura > 70:
+    print("Superaquecimento")
+else:
+    print("Temperatura normal")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>5. Potência Consumida</h4>
+                            <p><strong>Sua Resolução:</strong> Leia potencia. Se potencia > 1000 entao escreva "Alto consumo", senao escreva "Consumo normal", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex5')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex5_potencia.py', 'pot = float(input(\'Potência: \'))\nif pot > 1000:\n    print(\'Alto consumo\')\nelse:\n    print(\'Consumo normal\')')">Baixar .PY</button>
+                            <div id="codex5" class="codigo-area">potencia = float(input("Leia a potência (W): "))
+if potencia > 1000:
+    print("Alto consumo")
+else:
+    print("Consumo normal")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>6. Bateria Carregada</h4>
+                            <p><strong>Sua Resolução:</strong> Leia carga_bateria. Se carga_bateria >= 80 entao escreva "Bateria carregada", senao escreva "Bateria precisa recarregar", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex6')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex6_bateria.py', 'carga = float(input(\'Carga: \'))\nif carga >= 80:\n    print(\'Bateria carregada\')\nelse:\n    print(\'Bateria precisa recarregar\')')">Baixar .PY</button>
+                            <div id="codex6" class="codigo-area">carga = float(input("Leia a carga da bateria (%): "))
+if carga >= 80:
+    print("Bateria carregada")
+else:
+    print("Bateria precisa recarregar")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>7. Sensor de Presença</h4>
+                            <p><strong>Sua Resolução:</strong> Leia sensor. Se sensor == 1 entao escreva "Luz ligada", senao escreva "Luz desligada", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex7')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex7_sensor.py', 'sensor = int(input(\'Sensor: \'))\nif sensor == 1:\n    print(\'Luz ligada\')\nelse:\n    print(\'Luz desligada\')')">Baixar .PY</button>
+                            <div id="codex7" class="codigo-area">sensor = int(input("Leia 1 (presença) ou 0 (ausência): "))
+if sensor == 1:
+    print("Luz ligada")
+else:
+    print("Luz desligada")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>8. Resistência Elétrica</h4>
+                            <p><strong>Sua Resolução:</strong> Leia resistencia. Se resistencia > 1000 entao escreva "Alta resistência", senao escreva "Baixa resistência", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex8')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex8_resistencia.py', 'res = float(input(\'Resistência: \'))\nif res > 1000:\n    print(\'Alta resistência\')\nelse:\n    print(\'Baixa resistência\')')">Baixar .PY</button>
+                            <div id="codex8" class="codigo-area">resistencia = float(input("Leia um valor de resistência (ohms): "))
+if resistencia > 1000:
+    print("Alta resistência")
+else:
+    print("Baixa resistência")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>9. Frequência da Rede</h4>
+                            <p><strong>Sua Resolução:</strong> Leia frequencia. Se frequencia == 60 entao escreva "Frequência correta", senao escreva "Frequência fora do padrão", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex9')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex9_freq.py', 'freq = float(input(\'Frequência: \'))\nif freq == 60:\n    print(\'Frequência correta\')\nelse:\n    print(\'Frequência fora do padrão\')')">Baixar .PY</button>
+                            <div id="codex9" class="codigo-area">frequencia = float(input("Leia a frequência (Hz): "))
+if frequencia == 60:
+    print("Frequência correta")
+else:
+    print("Frequência fora do padrão")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>10. Fusível Queimado</h4>
+                            <p><strong>Sua Resolução:</strong> Leia fusivel. Se fusivel == 1 entao escreva "Substituir fusível", senao escreva "Fusível em bom estado", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex10')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex10_fusivel.py', 'fus = int(input(\'Fusível: \'))\nif fus == 1:\n    print(\'Substituir fusível\')\nelse:\n    print(\'Fusível em bom estado\')')">Baixar .PY</button>
+                            <div id="codex10" class="codigo-area">fusivel = int(input("Leia 1 (queimado) ou 0 (OK): "))
+if fusivel == 1:
+    print("Substituir fusível")
+else:
+    print("Fusível em bom estado")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>11. Queda de Tensão</h4>
+                            <p><strong>Sua Resolução:</strong> Leia tensao_entrada, Leia tensao_saida. Se tensao_saida < tensao_entrada entao escreva "Há queda de tensão", senao escreva "Sem queda", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex11')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex11_queda.py', 'ent=float(input()); sai=float(input())\nif sai<ent: print(\'Há queda de tensão\')\nelse: print(\'Sem queda\')')">Baixar .PY</button>
+                            <div id="codex11" class="codigo-area">tensao_entrada = float(input("Leia a tensão de entrada: "))
+tensao_saida = float(input("Leia a tensão de saída: "))
+if tensao_saida < tensao_entrada:
+    print("Há queda de tensão")
+else:
+    print("Sem queda")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>12. Motor Ligado</h4>
+                            <p><strong>Sua Resolução:</strong> Leia motor. Se motor == 1 entao escreva "Motor em funcionamento", senao escreva "Motor parado", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex12')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex12_motor.py', 'motor=int(input())\nif motor==1: print(\'Motor em funcionamento\')\nelse: print(\'Motor parado\')')">Baixar .PY</button>
+                            <div id="codex12" class="codigo-area">motor = int(input("Leia 1 (ligado) ou 0 (desligado): "))
+if motor == 1:
+    print("Motor em funcionamento")
+else:
+    print("Motor parado")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>13. Consumo Residencial</h4>
+                            <p><strong>Sua Resolução:</strong> Leia consumo. Se consumo > 200 entao escreva "Consumo elevado", senao escreva "Consumo baixo", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex13')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex13_consumo.py', 'con=float(input())\nif con>200: print(\'Consumo elevado\')\nelse: print(\'Consumo baixo\')')">Baixar .PY</button>
+                            <div id="codex13" class="codigo-area">consumo = float(input("Leia o consumo mensal (kWh): "))
+if consumo > 200:
+    print("Consumo elevado")
+else:
+    print("Consumo baixo")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>14. LED Indicador</h4>
+                            <p><strong>Sua Resolução:</strong> Leia led. Se led == 1 entao escreva "Sistema ativo", senao escreva "Sistema inativo", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex14')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex14_led.py', 'led=int(input())\nif led==1: print(\'Sistema ativo\')\nelse: print(\'Sistema inativo\')')">Baixar .PY</button>
+                            <div id="codex14" class="codigo-area">led = int(input("Leia 1 (aceso) ou 0 (apagado): "))
+if led == 1:
+    print("Sistema ativo")
+else:
+    print("Sistema inativo")</div>
+                        </div>
+
+                        <div class="ex-manuscrito">
+                            <h4>15. Tensão Mínima de Operação</h4>
+                            <p><strong>Sua Resolução:</strong> Leia tensao. Se tensao < 110 entao escreva "Equipamento não funcionará corretamente", senao escreva "Funcionamento normal", fimse.</p>
+                            <button class="btn btn-ver" onclick="toggleCod('codex15')">Ver/Ocultar Python</button>
+                            <button class="btn btn-down" onclick="downloadAtv('ex15_min.py', 't=float(input())\nif t<110: print(\'Equipamento não funcionará corretamente\')\nelse: print(\'Funcionamento normal\')')">Baixar .PY</button>
+                            <div id="codex15" class="codigo-area">tensao = float(input("Leia a tensão (V): "))
+if tensao < 110:
+    print("Equipamento não funcionará corretamente")
+else:
+    print("Funcionamento normal")</div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod4')">Ver Código</button>
-                    <button class="btn btn-down" onclick="downloadAtv('atividade4.py', '# Exercício de Tensão\ntensao = float(input(\'Tensão (V): \'))\nif tensao > 220:\n    print(\'Alerta: Alta Tensão!\')\nelse:\n    print(\'Tensão segura.\')')">Download .PY</button>
-                </div>
-                <div id="cod4" class="codigo-area"># Exemplo de Condicional para Engenharia Elétrica:
-tensao = float(input("Digite a tensão (V): "))
-if tensao > 220:
-    print("Alerta: Alta Tensão!")
-else:
-    print("Tensão dentro da faixa segura.")</div>
             </div>
 
             <div class="card">
                 <div>
                     <h3>5 Atividade: Introdução com Python</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 10 exercícios da apostila INTRODUCAO A ALGORITMOS com Python, criada em aula pelo Claude.ai.</p>
-                        <p><strong>Descrição:</strong> Resolução completa dos algoritmos corrigindo a acentuação textual trazida pela IA.</p>
+                        <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 10 exercícios da apostila INTRODUCAO A ALGORITMOS com Python, criada pelo Claude.ai.</p>
+                        <p><strong>Descrição:</strong> Transposição dos algoritmos corrigindo a acentuação textual trazida pela IA.</p>
                     </div>
                 </div>
                 <div class="acoes">
                     <button class="btn btn-ver" onclick="toggleCod('cod5')">Ver Código</button>
-                    <button class="btn btn-down" onclick="downloadAtv('atividade5.py', '# Exercício Apostila\nresistencia = 47\ncorrente = 2\npotencia = resistencia * (corrente ** 2)\nprint(f\'Potência: {potencia} W\')')">Download .PY</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade5.py', 'resistencia = 47\ncorrente = 2\npotencia = resistencia * (corrente ** 2)\nprint(f\'Potência: {potencia} W\')')">Download .PY</button>
                 </div>
                 <div id="cod5" class="codigo-area"># Exercício resolvido da apostila:
 resistencia = float(input("Resistência (Ohms): "))
@@ -242,7 +422,7 @@ print(f"A potência dissipada calculada é: {potencia} W")</div>
                 <div>
                     <h3>6 Atividade: Exercícios com LLMs</h3>
                     <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Usar 3 LLMs para gerar 10 exercícios com enunciado contextualizado, pseudocódigo e código em Python distribuídos entre Elétrica, Mecânica e Telecomunicações.</p>
+                        <p><strong>Objetivo:</strong> Usar 3 LLMs para gerar 10 exercícios com enunciado contextualizado distribuídos entre Elétrica, Mecânica e Telecomunicações.</p>
                         <p><strong>Descrição:</strong> Análise comparativa qualitativa sobre os enunciados e códigos produzidos.</p>
                     </div>
                 </div>
@@ -255,7 +435,7 @@ print(f"A potência dissipada calculada é: {potencia} W")</div>
 
             <div class="card">
                 <div>
-                    <h3>7 Atividade: Quiz de Avaliação da Experiência</h3>
+                    <h3>7 Atividade: Quiz de Avaliação</h3>
                     <div class="detalhes">
                         <p><strong>Objetivo:</strong> Coletar a percepção discente sobre o processo de realização da atividade de Algoritmos utilizando LLMs.</p>
                         <p><strong>Descrição:</strong> Diagnóstico de facilidades e barreiras no uso pedagógico das IAs.</p>
@@ -283,7 +463,7 @@ print(f"A potência dissipada calculada é: {potencia} W")</div>
 # Resoluções em papel interpretadas e convertidas de forma coerente.</div>
             </div>
 
-            </div>
+        </div>
     </main>
 
     <footer>
