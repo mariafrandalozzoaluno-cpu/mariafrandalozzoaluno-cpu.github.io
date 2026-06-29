@@ -3,707 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Acadêmico - Algoritmos e Programação</title>
+    <title>Portfólio Acadêmico - Maria Frandalozzo</title>
     <style>
         :root {
-            --primary-purple: #4A3B5C; /* Roxo escuro aquarelável */
-            --accent-pink: #F8C3CD;    /* Rosa clarinho aquarela vibrante */
-            --soft-pink: #FCEEF1;      /* Rosa pastel bem suave para fundos */
-            --mint-green: #E8F5E9;     /* Verde menta suave */
-            --pool-blue: #E3F2FD;      /* Azul piscina suave */
-            --earth-brown: #6E554F;    /* Marrom terroso sutil */
-            --bg-color: #F7F4F6;       /* Fundo geral tom de papel artesanal */
-            --card-bg: #FFFFFF;        
-            --text-color: #2D2533;     
+            --roxo-primario: #4A3B5C;
+            --rosa-acentuado: #F8C3CD;
+            --rosa-claro: #FCEEF1;
+            --cor-de-fundo: #F7F4F6;
+            --card-bg: #FFFFFF;
+            --texto: #333333;
         }
 
         body {
-            font-family: "Courier New", Courier, monospace; 
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-de-fundo);
+            color: var(--texto);
             margin: 0;
             padding: 0;
-            font-weight: bold;
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary-purple) 0%, #634357 50%, #40516B 100%);
-            color: #FFFFFF;
+            background-color: var(--roxo-primario);
+            color: white;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 6px solid var(--accent-pink);
-            box-shadow: 0 4px 15px rgba(74, 59, 92, 0.3);
+            padding: 40px 20px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.6rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-pink);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        header h2 {
-            margin: 10px 0 0 0;
-            font-size: 1.5rem;
-            font-weight: normal;
-            color: #FFFFFF;
+            font-size: 2.3em;
         }
 
         header p {
-            margin: 15px 0 0 0;
-            color: #FFFFFF;
-            font-size: 1.1rem;
-            background: rgba(248, 195, 205, 0.3);
-            display: inline-block;
-            padding: 6px 18px;
-            border-radius: 20px;
-            border: 1px solid var(--accent-pink);
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+            color: var(--rosa-acentuado);
         }
 
-        /* ESTRUTURA EM DUAS COLUNAS VOLTOU */
-        .container {
-            max-width: 1100px;
+        main {
+            max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1.9fr 1.1fr;
-            gap: 30px;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .main-content, .sidebar {
+        /* Estrutura de Duas Colunas Lado a Lado */
+        .container-atividades {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            flex-wrap: wrap;
+            gap: 25px;
         }
 
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 4px 4px 20px rgba(110, 85, 79, 0.15);
-            padding: 30px;
-            border: 2px solid var(--accent-pink);
-            border-top: 12px solid var(--primary-purple);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            color: var(--primary-purple);
-            font-size: 1.5rem;
-            border-bottom: 3px dashed var(--accent-pink);
-            padding-bottom: 12px;
-        }
-
-        .professor-nome {
-            color: var(--earth-brown);
-            font-size: 1rem;
-            margin-bottom: 20px;
-            background-color: var(--soft-pink);
-            padding: 8px 14px;
-            border-left: 4px solid var(--primary-purple);
-            display: inline-block;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .progress-container {
-            background: linear-gradient(to right, #FFF7F9, #F0F4C3);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px dashed var(--earth-brown);
-            margin: 20px 0;
-        }
-
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: var(--earth-brown);
-            margin-bottom: 8px;
-        }
-
-        .progress-bar {
-            background: #EAEAEA;
-            border-radius: 10px;
-            height: 22px;
-            overflow: hidden;
-            border: 1.5px solid var(--earth-brown);
-        }
-
-        .progress-fill {
-            background: linear-gradient(90deg, #F8C3CD 0%, #A188AF 50%, #4A3B5C 100%);
-            height: 100%;
-            width: 100%; 
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            color: white;
-            font-size: 0.8rem;
-        }
-
-        .item-atividade {
-            border-bottom: 2px dashed var(--accent-pink);
-            padding: 25px 0;
-        }
-
-        .atividade-topo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            padding: 4px 8px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            border: 1px solid rgba(0,0,0,0.15);
-            display: inline-block;
-            min-width: 85px;
-            text-align: center;
-        }
-        .tag.exercicio { background: var(--pool-blue); color: #0D47A1; }
-        .tag.projeto { background: var(--mint-green); color: #1B5E20; }
-        .tag.prova { background: #FFEBEE; color: #B71C1C; }
-
-        .nome-atv {
-            font-size: 1.05rem;
-            color: var(--text-color);
-        }
-
-        .tabs-container {
-            margin-top: 10px;
-        }
-
-        .tab-buttons {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        .tab-btn {
-            background-color: var(--soft-pink);
-            color: var(--primary-purple);
-            border: 1px solid var(--accent-pink);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-family: "Courier New", Courier, monospace;
-            font-weight: bold;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .tab-btn:hover {
-            background-color: var(--accent-pink);
-        }
-
-        .tab-btn.active {
-            background-color: var(--primary-purple);
-            color: #FFFFFF;
-            border-color: var(--primary-purple);
-        }
-
-        .tab-content {
-            display: none;
-            background: #FFFDF9;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px dashed var(--accent-pink);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* CORREÇÃO DO CONTAINER DOS CÓDIGOS (NÃO CORTA MAIS) */
-        pre {
-            background: #2D2533;
-            color: #F8C3CD;
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-family: monospace;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            border-left: 4px solid var(--accent-pink);
-            white-space: pre; /* Garante formatação correta de quebras e espaços */
-            max-height: 400px; /* Adiciona rolagem vertical se for gigante */
-            overflow-y: auto;
-        }
-
-        .img-container {
-            margin-top: 15px;
-            text-align: center;
-            background: #fdfbf7;
-            padding: 10px;
-            border: 1px dotted var(--accent-pink);
-            border-radius: 6px;
-        }
-
-        .img-container img {
-            max-width: 100%;
-            height: auto;
-            border: 2px dashed var(--accent-pink);
-            border-radius: 6px;
-            margin-bottom: 5px;
-        }
-
-        .grafico-placeholder {
-            font-size: 0.8rem;
-            color: var(--earth-brown);
-            font-style: italic;
-            margin-top: 5px;
-        }
-
-        /* ESTILOS DA BARRA LATERAL (DIREITA) */
-        .widget {
-            background: #FFFFFF;
-            border: 2px solid var(--accent-pink);
+        /* Estilo dos Quadradinhos (Cards) */
+        .card-atividade {
+            background-color: var(--card-bg);
+            border: 1px solid var(--rosa-acentuado);
             border-radius: 12px;
             padding: 25px;
-            box-shadow: 4px 4px 12px rgba(0,0,0,0.04);
+            /* Garante 2 por linha no computador */
+            flex: 1 1 calc(50% - 25px);
+            box-sizing: border-box;
+            box-shadow: 0 4px 8px rgba(74, 59, 92, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .widget h3 {
+        .card-atividade h3 {
             margin-top: 0;
-            color: var(--primary-purple);
-            font-size: 1.2rem;
-            border-bottom: 2px solid var(--accent-pink);
+            color: var(--roxo-primario);
+            font-size: 1.35em;
+            border-bottom: 2px solid var(--rosa-claro);
             padding-bottom: 8px;
         }
 
-        .post-it {
-            background: #FFFEE0 !important; 
-            border-left: 10px solid #FBC02D !important;
-            box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+        .autor {
+            color: #666;
+            font-size: 0.9em;
+            margin: 5px 0 15px 0;
+            font-style: italic;
         }
 
-        .post-it p {
-            font-size: 0.9rem;
+        .info-entrega p {
+            margin: 10px 0;
             line-height: 1.5;
-            color: #5D4037;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px dashed #FBC02D;
+            font-size: 0.95em;
         }
 
-        .links-sistema a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 10px;
-            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
-            border-radius: 6px;
-            transition: 0.2s;
-            text-align: center;
-            border: 1px solid #90CAF9;
-            margin-bottom: 8px;
-            display: block;
+        .info-entrega strong {
+            color: var(--roxo-primario);
         }
 
-        .links-sistema a:hover {
-            transform: scale(1.02);
-            background: var(--primary-purple);
+        /* Botões de Ação */
+        .botoes-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 15px;
+            background-color: var(--roxo-primario);
             color: white;
-        }
-
-        .lembretes-list {
-            padding: 0;
-            list-style: none;
-            margin: 15px 0 0 0;
-        }
-        
-        .lembretes-list li {
-            margin-bottom: 12px;
-            padding: 8px 12px;
+            text-decoration: none;
             border-radius: 6px;
-            font-size: 0.9rem;
-        }
-        
-        .lembretes-list li.urgente { background: #FFEBEE; border-left: 4px solid #D32F2F; color: #C62828; }
-        .lembretes-list li.importante { background: #E8F5E9; border-left: 4px solid #388E3C; color: #2E7D32; }
-        .lembretes-list li.normal { background: #E3F2FD; border-left: 4px solid #1976D2; color: #1565C0; }
-
-        footer {
+            font-size: 0.9em;
+            font-weight: bold;
             text-align: center;
-            padding: 40px 20px;
-            color: var(--earth-brown);
-            font-size: 0.9rem;
-            border-top: 3px dashed var(--accent-pink);
-            margin-top: 60px;
+            flex: 1;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-download {
+            background-color: #2e7d32; /* Verde discreto para download */
+        }
+
+        /* Responsividade para Celular (vira uma coluna só) */
+        @media (max-width: 768px) {
+            .card-atividade {
+                flex: 1 1 100%;
+            }
+            .botoes-links {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Universidade Federal do Pampa</h1>
-        <h2>Engenharia Elétrica</h2>
-        <p>Portfólio de Aprendizagem - Completo (24 Atividades)</p>
+        <h1>Meu Portfólio Acadêmico</h1>
+        <p>Acompanhamento de Entregas e Atividades</p>
     </header>
 
-    <div class="container">
-        
-        <div class="main-content">
-            
-            <div class="card">
-                <h2>💻 Algoritmos e Programação</h2>
-                <div class="professor-nome">Prof. Diego Luis Kreutz</div>
-                
-                <div class="progress-container">
-                    <div class="progress-info">
-                        <span>🗓️ Progresso de Entregas Coberto:</span>
-                        <span>Todas as 24 Atividades Integradas (100%)</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill">100%</div>
-                    </div>
-                </div>
+    <main>
+        <div class="container-atividades">
 
-                <div class="atividades-secao">
-                    <span style="color: var(--primary-purple); font-size: 1.1rem;">📋 Compilado Geral de Atividades:</span>
+            <div class="card-atividade">
+                <div>
+                    <h3>Entrega 1: Nome da Primeira Atividade</h3>
+                    <p class="autor"><strong>Autor:</strong> Maria Frandalozzo</p>
                     
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividades 1, 2 e 3: Questionários Diagnósticos e Quizzes</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at13-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at13-codigo')">💻 Resolução</button>
-                            </div>
-                            <div id="at13-enunciado" class="tab-content active">
-                                <p><strong>Atividade 1:</strong> Preenchimento do formulário de diagnóstico inicial estruturado.</p>
-                                <p><strong>Atividade 2:</strong> QUIZ - Lógica de Programação (Preparatório prático em sala de aula).</p>
-                                <p><strong>Atividade 3:</strong> QUIZ - Diagnóstico Geral de Lógica de Programação.</p>
-                            </div>
-                            <div id="at13-codigo" class="tab-content">
-                                <p>As atividades iniciais foram respondidas e validadas eletronicamente de forma direta no ambiente virtual do Google Classroom da Unipampa.</p>
-                            </div>
-                        </div>
+                    <div class="info-entrega">
+                        <p><strong>Objetivo:</strong> Escreva aqui qual era o objetivo principal desta atividade e o problema que ela resolvia.</p>
+                        <p><strong>Tecnologias Utilizadas:</strong> HTML5, CSS3 e JavaScript.</p>
+                        <p><strong>Resultados Obtidos:</strong> Explique o que você aprendeu a desenvolver ou o resultado final que alcançou.</p>
                     </div>
+                </div>
 
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividade 4: Lista Completa de 15 Exercícios de Engenharia</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at4-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at4-codigo')">💻 Código / Soluções Completas</button>
-                            </div>
-                            <div id="at4-enunciado" class="tab-content active">
-                                <p><strong>Enunciado:</strong> Escolher e resolver no mínimo 15 exercícios práticos aplicando estruturas condicionais simples a problemas simulados de Engenharia Elétrica.</p>
-                            </div>
-                            <div id="at4-codigo" class="tab-content">
-                                <p><strong>Códigos em Python Desenvolvidos (Exercícios 1 a 15):</strong></p>
-                                <pre>
-# 1. Verificação de Tensão em um Circuito Elétrico
-tensao = float(input("Digite a tensão lida no circuito: "))
-if tensao > 220:
-    print("Perigo alta tensão")
+                <div class="botoes-links">
+                    <a href="#" target="_blank" class="btn">Visualizar</a>
+                    <a href="#" download class="btn btn-download">Download Artefato</a>
+                </div>
+            </div>
 
-# 3. Estado de um Disjuntor Geral
-disjuntor = int(input("Digite o estado do disjuntor (1 para LIGADO / 0 para DESLIGADO): "))
-if disjuntor == 0:
-    print("Disjuntor desligado")
-
-# 5. Análise de Potência Consumida por Equipamento
-potencia = float(input("Digite a potência consumida (W): "))
-if potencia > 1000:
-    print("Consumo elevado")
-
-# 7. Sistema Automático de Luz de Passagem
-presenca = int(input("Presença detectada? (1-Sim / 0-Não): "))
-if presenca == 1:
-    print("Luz temporizada ligada")
-
-# 9. Sobrecarga de Corrente em Resistor
-corrente = float(input("Digite a corrente medida (A): "))
-if corrente > 10:
-    print("Sobrecarga elétrica détectada no resistor")
-
-# 11. Temperatura Crítica de Operação de Transformador
-temp = float(input("Digite a temperatura (°C): "))
-if temp > 80:
-    print("Alarme: Superaquecimento do transformador")
-
-# 13. Fator de Potência de Instalação Industrial
-fp = float(input("Digite o Fator de Potência medido: "))
-if fp < 0.92:
-    print("Fator de potência abaixo do limite permitido (Multa)")
-
-# 15. Carga de Banco de Baterias Estacionárias
-carga = float(input("Digite a porcentagem de carga da bateria: "))
-if carga < 20:
-    print("Aviso: Banco de baterias em nível crítico de descarga")
-                                </pre>
-                            </div>
-                        </div>
+            <div class="card-atividade">
+                <div>
+                    <h3>Entrega 2: Nome da Segunda Atividade</h3>
+                    <p class="autor"><strong>Autor:</strong> Maria Frandalozzo</p>
+                    
+                    <div class="info-entrega">
+                        <p><strong>Objetivo:</strong> Escreva aqui o objetivo da segunda entrega realizada na matéria.</p>
+                        <p><strong>Tecnologias Utilizadas:</strong> Lógica de Programação, Algoritmos.</p>
+                        <p><strong>Resultados Obtidos:</strong> Detalhe os aprendizados e o sucesso na execução do projeto.</p>
                     </div>
+                </div>
 
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividade 5: Exercícios Baseados na Apostila Claude.ai</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at5-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at5-codigo')">💻 Resolução</button>
-                            </div>
-                            <div id="at5-enunciado" class="tab-content active">
-                                <p><strong>Enunciado:</strong> Resolver no mínimo 10 exercícios propostos contidos na apostila experimental gerada via IA generativa Claude.ai durante as práticas de laboratório.</p>
-                            </div>
-                            <div id="at5-codigo" class="tab-content">
-                                <pre>
-# Exercícios de Lógica Avançada de Sintaxe e Controle de Variáveis
-print("Apostila prática estruturada com auxílio do Claude.ai finalizada.")
-                                </pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividades 6, 7 e 8: Laboratórios Práticos de Condicionais</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at68-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at68-codigo')">💻 Códigos</button>
-                            </div>
-                            <div id="at68-enunciado" class="tab-content active">
-                                <p>Série de desafios práticos semanais integrados no Classroom:</p>
-                                <p><strong>Atv 6:</strong> Condicionais aninhadas aplicadas a faixas de consumo elétrico.</p>
-                                <p><strong>Atv 7:</strong> Atividade de fixação supervisionada em ambiente de IDE.</p>
-                                <p><strong>Atv 8:</strong> Modelagem de equações matemáticas estruturadas.</p>
-                            </div>
-                            <div id="at68-codigo" class="tab-content">
-                                <pre>
-# Exemplo de cálculo de tarifas baseado em faixas de consumo KWh
-consumo = float(input("Consumo (KWh): "))
-if consumo <= 100:
-    tarifa = consumo * 0.50
-else:
-    tarifa = (100 * 0.50) + ((consumo - 100) * 0.85)
-print(f"Tarifa calculada: R$ {tarifa:.2f}")
-                                </pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag projeto">Projeto</span>
-                            <span class="nome-atv">Atividade 9: Estruturas de Dados (Listas, Vetores e Arrays)</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at9-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at9-codigo')">💻 Código & Gráficos Demonstrativos</button>
-                            </div>
-                            <div id="at9-enunciado" class="tab-content active">
-                                <p><strong>Enunciado:</strong> Desenvolver algoritmos capazes de tratar coleções indexadas de dados e comprovar os resultados obtidos por meio de capturas das telas de execução.</p>
-                            </div>
-                            <div id="at9-codigo" class="tab-content">
-                                <p><strong>Códigos de Processamento de Leituras Sequenciais:</strong></p>
-                                <pre>
-# Coleta e análise estatística de um vetor de amostragem de tensões
-medicoes = [115.6, 220.1, 218.4, 114.2, 221.0, 118.9, 219.5]
-soma_tensoes = sum(medicoes)
-media = soma_tensoes / len(medicoes)
-print(f"Número total de medições: {len(medicoes)}")
-print(f"Média das tensões registradas: {media:.2f} V")
-                                </pre>
-                                <div class="img-container">
-                                    <img src="Screenshot 20260423-184147.png" alt="Gráfico de Execução de Vetores" onerror="this.innerHTML='[Gráfico das Telas de Execução de Arrays - Insira seu Print Real Aqui]';">
-                                    <div class="grafico-placeholder">📊 Comprovação de funcionamento - Capturas do terminal de comando.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividades 10 a 15: Estruturas de Repetição Loops e Funções</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at1015-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at1015-codigo')">💻 Códigos Completos</button>
-                            </div>
-                            <div id="at1015-enunciado" class="tab-content active">
-                                <p>Série de laboratórios focados na automação de processos repetitivos via estruturas de laço (`while` e `for`) e encapsulamento reutilizável de código (funções modulares).</p>
-                            </div>
-                            <div id="at1015-codigo" class="tab-content">
-                                <p><strong>Lógica de Loops Aplicada a Monitoramentos Contínuos:</strong></p>
-                                <pre>
-# Simulação de Loop de Leitura Ininterrupta com parada de segurança
-amostras = 0
-limite_amostras = 5
-while amostras < limite_amostras:
-    print(f"Carregando dados da leitura elétrica sequencial nº {amostras + 1}")
-    amostras += 1
-
-# Exemplo de modularização por função para cálculo de Potência Ativa
-def calcular_potencia_ativa(tensao, corrente, cosseno_phi):
-    return tensao * corrente * cosseno_phi
-
-p_final = calcular_potencia_ativa(220, 15, 0.92)
-print(f"Potência Ativa Modular Calculada: {p_final:.2f} W")
-                                </pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag exercicio">Exercício</span>
-                            <span class="nome-atv">Atividades 16 a 20: Estruturas Multidimensionais e Matrizes</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at1620-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at1620-codigo')">💻 Códigos de Matrizes</button>
-                            </div>
-                            <div id="at1620-enunciado" class="tab-content active">
-                                <p>Exploração prática de arranjos bidimensionais de dados, simulando tabelas complexas, planilhas de coeficientes de circuitos ou mapeamentos de barramentos.</p>
-                            </div>
-                            <div id="at1620-codigo" class="tab-content">
-                                <p><strong>Lógica Matricial Desenvolvida:</strong></p>
-                                <pre>
-# Mapeamento e Varredura de uma Matriz 2x2 para Sistemas Elétricos
-matriz_impedancias = [
-    [10, 5],
-    [5, 12]
-]
-for i in range(len(matriz_impedancias)):
-    for j in range(len(matriz_impedancias[i])):
-        print(f"Impedância na posição [{i}][{j}]: {matriz_impedancias[i][j]} Ohms")
-                                </pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag prova">Prova</span>
-                            <span class="nome-atv">Atividades 21, 22 e 23: Avaliações Individuais e Portfólio v1</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at2123-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at2123-codigo')">💻 Resultados Acadêmicos</button>
-                            </div>
-                            <div id="at2123-enunciado" class="tab-content active">
-                                <p><strong>Atividade 21:</strong> Avaliação Escrita Individual Presencial realizada diretamente nos computadores do laboratório acadêmico.</p>
-                                <p><strong>Atividade 22:</strong> Estudo de caso e refatoração corretiva de todas as questões presentes na avaliação individual.</p>
-                                <p><strong>Atividade 23:</strong> Criação, versionamento e implantação da primeira versão oficial deste Portfólio no GitHub Pages.</p>
-                            </div>
-                            <div id="at2123-codigo" class="tab-content">
-                                <p>A primeira versão foi disponibilizada com sucesso e registrada a chave hash de commit correspondente para fins de auditoria do professor.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-atividade">
-                        <div class="atividade-topo">
-                            <span class="tag projeto">Projeto</span>
-                            <span class="nome-atv">Atividade 24: Evolução do Portfólio e Registro de Tecnologias</span>
-                        </div>
-                        <div class="tabs-container">
-                            <div class="tab-buttons">
-                                <button class="tab-btn active" onclick="openTab(event, 'at24-enunciado')">📋 O que foi pedido</button>
-                                <button class="tab-btn" onclick="openTab(event, 'at24-codigo')">💻 IAs Utilizadas & Detalhes</button>
-                            </div>
-                            <div id="at24-enunciado" class="tab-content active">
-                                <p><strong>Enunciado:</strong> Realizar discussões com pelo menos dois colegas de classe sobre design, organização e usabilidade. Aplicar refinamentos visuais e registrar obrigatoriamente no site todas as ferramentas de IA generativas empregadas.</p>
-                            </div>
-                            <div id="at24-codigo" class="tab-content">
-                                <p><strong>Modelos de Linguagem e Inteligência Artificial Aplicados:</strong></p>
-                                <ul style="margin-left: 20px; margin-top: 5px;">
-                                    <li>🤖 GPT Versão 4o — Empregado na modelagem de escopo lógico dos primeiros códigos.</li>
-                                    <li>🤖 Claude Versão 3.5 Sonnet — Utilizado na idealização do estilo estético aquarela (roxo/rosa).</li>
-                                    <li>🤖 Gemini Versão 1.5 Pro — Utilizado no mapeamento do PDF de 24 atividades e no design estrutural de abas dinâmicas em duas colunas.</li>
-                                </ul>
-                                <p style="margin-top: 10px;"><strong>Colegas consultados para melhorias de UX:</strong> Alunos da disciplina de Algoritmos (Turma 2026).</p>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="botoes-links">
+                    <a href="#" target="_blank" class="btn">Visualizar</a>
+                    <a href="#" download class="btn btn-download">Download Artefato</a>
                 </div>
             </div>
 
         </div>
-
-        <div class="sidebar">
-            
-            <div class="widget post-it">
-                <h3>📌 Bloco de Notas: Como Funciona?</h3>
-                <p>
-                    Este portal foi criado para registrar minha evolução na cadeira de Algoritmos. Aqui eu organizo códigos, revisões de provas e monitoro meu andamento acadêmico de forma centralizada!
-                </p>
-            </div>
-
-            <div class="widget">
-                <h3>🔔 Status das Atividades</h3>
-                <ul class="lembretes-list">
-                    <li class="importante">✅ Todas as 24 atividades do relatório foram compiladas e inseridas.</li>
-                    <li class="importante">✅ Layout de duas colunas reestabelecido.</li>
-                    <li class="normal">📚 Revisar blocos de código antes da submissão final do repositório.</li>
-                </ul>
-            </div>
-
-            <div class="widget">
-                <h3>🔗 Portais Acadêmicos</h3>
-                <div class="links-sistema">
-                    <a href="https://moodle.unipampa.edu.br/" target="_blank">Moodle Unipampa 🎓</a>
-                    <a href="https://guri.unipampa.edu.br/" target="_blank">Portal GURI 📑</a>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <footer>
-        <p>Desenvolvido por Maria Frandalozzo &copy; 2026 | Unipampa Engenharia Elétrica</p>
-    </footer>
-
-    <script>
-        function openTab(evt, tabName) {
-            var item = evt.currentTarget.closest('.item-atividade');
-            
-            var tabContents = item.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
-            }
-
-            var tabButtons = item.getElementsByClassName("tab-btn");
-            for (var i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove("active");
-            }
-
-            item.querySelector("#" + tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-    </script>
+    </main>
 
 </body>
 </html>
