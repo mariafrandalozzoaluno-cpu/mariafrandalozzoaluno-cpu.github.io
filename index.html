@@ -3,251 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio de Entregas - Algoritmos e Programação</title>
+    <title>Portfólio Universitário - Maria Luisa</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #333333;
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace !important;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #FDFBF9;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            color: #4A3B5C;
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
 
         header {
-            background-color: var(--primary-color);
-            color: white;
+            background: linear-gradient(135deg, #FAD4D8, #E6D9FB);
+            padding: 40px 20px;
             text-align: center;
-            padding: 2.5rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #8E7AB5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         header h1 {
+            font-size: 2.5em;
             margin: 0;
-            font-size: 2.2rem;
+            color: #8E7AB5;
+            font-weight: bold;
         }
 
-        header p {
-            margin: 0.5rem 0 0 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .info-header {
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        .info-header p {
+            margin: 5px 0;
         }
 
         main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .activity-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 2rem;
-            margin-bottom: 2.5rem;
-            border-left: 5px solid var(--accent-color);
+        /* Duas Colunas Lado a Lado */
+        .grid-atividades {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .activity-card h2 {
+        /* Estilo Aquarela das Caixas */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            border: 2px solid #FAD4D8;
+            box-shadow: 8px 8px 0px #FAD4D8;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-size: 1.3em;
             margin-top: 0;
-            color: var(--primary-color);
-            border-bottom: 2px solid #eeeeee;
-            padding-bottom: 0.5rem;
+            color: #8E7AB5;
+            border-bottom: 2px dashed #FAD4D8;
+            padding-bottom: 8px;
         }
 
-        .objective {
-            background-color: #e8f4fd;
-            padding: 1rem;
-            border-radius: 6px;
-            margin-bottom: 1.5rem;
-            font-style: italic;
+        .detalhes p {
+            margin: 10px 0;
+            font-size: 0.95em;
         }
 
-        .objective strong {
-            color: var(--primary-color);
+        .acoes {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
         }
 
-        .image-container {
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
             text-align: center;
-            margin: 1.5rem 0;
-            background-color: #f1f2f6;
-            padding: 1rem;
-            border-radius: 6px;
+            font-size: 0.9em;
         }
 
-        .image-container img {
+        .btn-ver { background-color: #8E7AB5; color: white; }
+        .btn-down { background-color: #BFEA7C; color: #4A5D23; }
+
+        .codigo-area {
+            display: none;
+            margin-top: 15px;
+            background: #F8F9FA;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #8E7AB5;
+            white-space: pre-wrap;
+            font-size: 0.85em;
+        }
+
+        .foto-container {
+            text-align: center;
+            margin: 10px 0;
+            background: #FFF0F2;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px dashed #FAD4D8;
+        }
+
+        .foto-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
         }
 
-        .image-caption {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 0.5rem;
-        }
-
-        .code-block {
-            background-color: #2d3436;
-            color: #dfe6e9;
-            padding: 1.2rem;
-            border-radius: 6px;
-            font-family: 'Courier New', Courier, monospace;
-            overflow-x: auto;
-            margin: 1rem 0;
-            font-size: 0.95rem;
-        }
-
-        .pseudocode {
-            background-color: #f5f6fa;
-            border: 1px dashed #b2bec3;
-            color: #2f3640;
-            padding: 1.2rem;
-            border-radius: 6px;
-            font-family: Consolas, Monaco, monospace;
-            white-space: pre-wrap;
-            margin: 1rem 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 4rem;
+        @media (max-width: 850px) {
+            .grid-atividades { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Portfólio de Entregas</h1>
-        <p>Desenvolvimento Científico e Tecnológico em Algoritmos | Disciplina Prática</p>
+        <h1>Meu Portfólio de Algoritmos</h1>
+        <div class="info-header">
+            <p><strong>Discente:</strong> Maria Luisa Carvalho Frandalozzo</p>
+            <p><strong>Curso:</strong> Engenharia Elétrica</p>
+            <p><strong>Instituição:</strong> Universidade Federal do Pampa (Unipampa)</p>
+            <p><strong>Docente:</strong> Prof. Dr. Diego Luis Kreutz</p>
+        </div>
     </header>
 
     <main>
+        <div class="grid-atividades">
 
-        <section class="activity-card">
-            <h2>Atividade 4: Exercícios de Lógica (Engenharia Elétrica)</h2>
-            <div class="objective">
-                <strong>Objetivo da Atividade:</strong> Escolher e resolver no mínimo 15 exercícios de lógica e algoritmos básicos envolvendo estruturas condicionais simples contextualizados na área de interesse[cite: 155, 156].
+            <div class="card">
+                <div>
+                    <h3>1 Atividade: Formulário Inicial</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Preenchimento do formulário de diagnóstico inicial da disciplina.</p>
+                        <p><strong>Descrição:</strong> Coleta de dados sobre a base prévia de conhecimento dos alunos em lógica de programação.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod1')">Ver Status</button>
+                </div>
+                <div id="cod1" class="codigo-area">Atividade concluída e enviada via Classroom.</div>
             </div>
 
-            <h3>1. Enunciados Escolhidos (Manuscritos)</h3>
-            <div class="image-container">
-                <img src="exercicios_1_a_8.png" alt="Lista de Exercícios 1 a 8">
-                <div class="image-caption">Figura 1: Exercícios de 1 a 8 formulados para Engenharia Elétrica.</div>
+            <div class="card">
+                <div>
+                    <h3>2 Atividade: QUIZ Preparatório</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Testar fundamentos de Lógica de Programação em atividade preparatória realizada em aula.</p>
+                        <p><strong>Descrição:</strong> Resolução de questões básicas sobre fluxogramas e sequenciamento lógico.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod2')">Ver Resposta</button>
+                </div>
+                <div id="cod2" class="codigo-area">Quiz realizado presencialmente com o ambiente da turma.</div>
             </div>
 
-            <div class="image-container">
-                <img src="exercicios_9_a_15.png" alt="Lista de Exercícios 9 a 15">
-                <div class="image-caption">Figura 2: Exercícios de 9 a 15 formulados para Engenharia Elétrica.</div>
+            <div class="card">
+                <div>
+                    <h3>3 Atividade: QUIZ Diagnóstico</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Avaliação diagnóstica de retenção do conteúdo básico de lógica.</p>
+                        <p><strong>Descrição:</strong> Exercícios avaliativos iniciais aplicados pelo docente.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod3')">Ver Resposta</button>
+                </div>
+                <div id="cod3" class="codigo-area">Nota registrada no sistema de avaliações.</div>
             </div>
 
-            <h3>2. Resolução Manual (Pseudocódigo / Lógica)</h3>
-            <div class="image-container">
-                <img src="respostas_1_a_8.png" alt="Respostas Manuscritas 1 a 8">
-                <div class="image-caption">Figura 3: Algoritmos em pseudocódigo (Exercícios 1 a 8).</div>
-            </div>
-
-            <div class="image-container">
-                <img src="respostas_9_a_15.png" alt="Respostas Manuscritas 9 a 15">
-                <div class="image-caption">Figura 4: Algoritmos em pseudocódigo (Exercícios 9 a 15).</div>
-            </div>
-
-            <h3>3. Transcrição da Lógica das Respostas</h3>
-            <div class="pseudocode">
-<strong>Exemplo de Fluxo Lógico Utilizado (Exercício 1 - Tensão Segura):</strong>
-Leia tensao
-Se tensao > 220 entao
-    escreva "Perigo alta Tensao"
-Se nao
-    escreva "Tensao segura"
-Fimse
-
-<strong>Nota de Aprendizado de Aula:</strong>
-O uso do bloco 'IF' (se) faz uma pergunta condicional e o 'ELSE' (senão) traz a resposta alternativa. O IF é usado quando o programa precisa decidir o que fazer com base em uma medição ou dado coletado.
-            </div>
-
-            <h3>4. Implementações em Python</h3>
-            <p>Abaixo estão as soluções programadas e validadas em ambiente Python:</p>
-            <pre class="code-block">
-# Exercício 1: Tensão Segura
-tensao = float(input("Digite a tensão medida (V): "))
+            <div class="card">
+                <div>
+                    <h3>4 Atividade: 15 Exercícios de Lógica</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Desenvolver 15 algoritmos básicos focados na área de interesse (Engenharia Elétrica) utilizando estruturas condicionais simples.</p>
+                        <p><strong>Descrição:</strong> Resolução manuscrita de problemas elétricos convertidos em fluxos computacionais.</p>
+                        
+                        <div class="foto-container">
+                            <img src="foto1.png" alt="Manuscritos de Engenharia Elétrica">
+                            <p style="font-size:0.8em; margin:5px 0 0 0;">[Imagens dos exercícios manuscritos 1 a 15]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod4')">Ver Código Exemplo</button>
+                    <a href="atv4_algoritmos.txt" download class="btn btn-down">Download TXT</a>
+                </div>
+                <div id="cod4" class="codigo-area"># Exemplo de algoritmo da lista: Medidor de Tensão Elétrica
+tensao = float(input("Digite a tensão (V): "))
 if tensao > 220:
-    print("Perigo: alta tensão!")
+    print("Alerta: Alta Tensão!")
 else:
-    print("Tensão segura.")
-
-# Exercício 2: Corrente em Resistor
-corrente = float(input("Digite a corrente medida (A): "))
-if corrente > 10:
-    print("Sobrecarga!")
-else:
-    print("Operação normal.")
-
-# Cole aqui os códigos dos demais exercícios (3 ao 15) conforme sua implementação!
-            </pre>
-        </section>
-
-        <section class="activity-card">
-            <h2>Atividade 5: Introdução a Algoritmos com Python</h2>
-            <div class="objective">
-                <strong>Objetivo da Atividade:</strong> Resolver no mínimo 10 exercícios da apostila prática de algoritmos utilizando a linguagem de programação Python[cite: 164, 165].
-            </div>
-            
-            <h3>Resolução dos Exercícios</h3>
-            <p>Os scripts foram construídos prezando pela limpeza das variáveis e legibilidade do código de programação:</p>
-            <pre class="code-block">
-# [Exemplo de Script Executado]
-# Declaração de variáveis de engenharia e operações matemáticas
-resistencia = 47  # ohms
-corrente_nominal = 1.5  # amperes
-
-potencia_calculada = resistencia * (corrente_nominal ** 2)
-print(f"Potência dissipada calculada: {potencia_calculada} W")
-            </pre>
-        </section>
-
-        <section class="activity-card">
-            <h2>Atividade 9: Listas, Vetores e Arrays em Python</h2>
-            <div class="objective">
-                <strong>Objetivo da Atividade:</strong> Implementar e executar algoritmos estruturados com vetores/arrays em Python, comprovando as execuções por meio de capturas de tela[cite: 213, 214].
+    print("Nível de tensão seguro.")</div>
             </div>
 
-            <h3>Evidência de Execução no Ambiente de Desenvolvimento</h3>
-            <div class="image-container">
-                <img src="Screenshot_20260423-184147.png" alt="Execução de Listas em Python">
-                <div class="image-caption">Figura 5: Terminal comprovando a correta alimentação e manipulação das listas de medições e temperaturas.</div>
+            <div class="card">
+                <div>
+                    <h3>5 Atividade: Algoritmos com Python (Claude.ai)</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Escolher e resolver no mínimo 10 exercícios da apostila com foco na sintaxe limpa do Python.</p>
+                        <p><strong>Descrição:</strong> Implementação em código corrigindo problemas textuais e acentuações originais da IA.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod5')">Ver Código</button>
+                    <a href="atv5_python.py" download class="btn btn-down">Download .PY</a>
+                </div>
+                <div id="cod5" class="codigo-area"># Resolução de Exercício da Apostila
+resistencia = float(input("Resistência (Ohms): "))
+corrente = float(input("Corrente (Amperes): "))
+potencia = resistencia * (corrente ** 2)
+print(f"A potência dissipada é: {potencia} W")</div>
             </div>
 
-            <pre class="code-block">
-# Trecho do algoritmo validado para análise de dados agregados
-temperaturas = []
-temperaturas.append(22)
-temperaturas.append(24)
-temperaturas.append(26)
-
-print(f"Temperaturas registradas: {temperaturas}")
-print(f"Maior temperatura: {max(temperaturas)}°C")
-            </pre>
-        </section>
-
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 - Desenvolvido por Maria Luisa Carvalho Frandalozzo como Portfólio Acadêmico[cite: 115].</p>
-    </footer>
-
+    <script>
+        function toggleCod(id) {
+            var area = document.getElementById(id);
+            area.style.display = (area.style.display === "block") ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
