@@ -730,6 +730,233 @@ else:
     print("O circuito opera em perfeitas condições de conformidade técnica.")
 print("=" * 60)</div>
             </div>
+            <div class="card">
+                <div>
+                    <h3>17 Atividade: Desafio Prático em Aula (Estruturas de Repetição)</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Resolver de forma ágil um problema proposto em sala utilizando loops (`while` ou `for`) e apresentar o funcionamento diretamente ao docente.</p>
+                        <p><strong>Descrição:</strong> Desenvolvimento de um algoritmo para controle de leitura contínua e parada por caractere sentinela.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod17')">Ver Código Completo</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade17_desafio.py', 'soma = 0\ncont = 0\nwhile True:\n    valor = float(input(\'Digite um valor (ou -1 para sair): \'))\n    if valor == -1: break\n    soma += valor\n    cont += 1\nif cont > 0:\n    print(f\'Média: {soma/cont:.2f}\')')">Download .PY</button>
+                </div>
+                <div id="cod17" class="codigo-area"># =====================================================================
+# 17ª ATIVIDADE: DESAFIO PRÁTICO EM AULA - LOOP COM SENTINELA
+# =====================================================================
+
+soma_valores = 0.0
+contador = 0
+
+print("--- Sistema de Coleta Contínua de Dados ---")
+print("Insira os valores técnicos observados. Digite -1 para encerrar.")
+
+while True:
+    valor = float(input(f"Insira o dado da amostra {contador + 1}: "))
+    if valor == -1:
+        print("Sentinela ativado. Finalizando entrada de dados...")
+        break
+    if valor < 0:
+        print("Aviso: Valores negativos (exceto -1) são ignorados nesta análise.")
+        continue
+        
+    soma_valores += valor
+    contador += 1
+
+print("\n--- RESULTADO DO PROCESSAMENTO EM TEMPO REAL ---")
+if contador > 0:
+    media = soma_valores / contador
+    print(f"Total de amostras válidas processadas: {contador}")
+    print(f"Somatório acumulado dos valores:      {soma_valores:.2f}")
+    print(f"Média aritmética calculada:           {media:.2f}")
+else:
+    print("Nenhum dado válido foi inserido para análise.")</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>18 Atividade: Exercícios Práticos de Matrizes/Arrays Multidimensionais</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Implementar lógicas em Python para manipulação, leitura e processamento de estruturas bidimensionais (matrizes).</p>
+                        <p><strong>Descrição:</strong> Construção de rotinas para varredura de linhas e colunas representando malhas ou tabelas analíticas.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod18')">Ver Código Completo</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade18_matrizes.py', 'matriz = [[0,0,0], [0,0,0], [0,0,0]]\nfor l in range(3):\n    for c in range(3):\n        matriz[l][c] = int(input(f\'Valor [{l}][{c}]: \'))\nprint(\'Matriz digitada:\')\nfor l in range(3):\n    print(matriz[l])')">Download .PY</button>
+                </div>
+                <div id="cod18" class="codigo-area"># =====================================================================
+# 18ª ATIVIDADE: CONSTRUÇÃO E VARREDURA DE MATRIZ DE DADOS (3x3)
+# =====================================================================
+
+# Inicialização da matriz quadrada 3x3 preenchida com zeros
+matriz_dados = [[0 for _ in range(3)] for _ in range(3)]
+
+print("--- Entrada de Dados para Matriz Analítica (3x3) ---")
+for linha in range(3):
+    for coluna in range(3):
+        matriz_dados[linha][coluna] = int(input(f"Digite o número inteiro para a posição [{linha}][{coluna}]: "))
+
+print("\n--- MATRIZ RENDERIZADA NA TELA NO FORMATO CORRETO ---")
+for linha in range(3):
+    for coluna in range(3):
+        # Imprime os elementos lado a lado tabulados de forma limpa
+        print(f"[{matriz_dados[linha][coluna]:^6}]", end="")
+    print() # Quebra de linha ao final de cada linha da matriz
+
+# Cálculo extra de soma dos elementos para validação de varredura completa
+soma_total = sum(sum(linha) for linha in matriz_dados)
+print(f"\nSoma acumulada de todos os elementos da matriz: {soma_total}")</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>19 Atividade: QUIZ - Strings, Listas e Dicionários</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Testar o entendimento teórico sobre tipos de dados estruturados avançados no ambiente de avaliação do ambiente acadêmico.</p>
+                        <p><strong>Descrição:</strong> Resolução de questionamento conceitual focado em imutabilidade e mapeamento de chaves.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod19')">Ver Status</button>
+                </div>
+                <div id="cod19" class="codigo-area">Quiz conceitual finalizado e pontuação computada no sistema.</div>
+            </div>
+
+            <div class="card" style="grid-column: span 2;">
+                <div>
+                    <h3>20 Atividade: Exercícios Avançados de Funções, Escopo e Exceções</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Desenvolver códigos estruturados modularizados divididos em funções com passagem de parâmetros, retorno explícito, tratamento rigoroso de erros com blocos `try/except` e controle de escopo global e local.</p>
+                        <p><strong>Descrição:</strong> Script avançado que modela um ambiente simulado isolando escopos de variáveis e validando entradas do usuário final.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod20')">Ver Código Completo Python</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade20_funcoes.py', 'def calcular_fator(base, multiplicador):\n    try:\n        return float(base) * float(multiplicador)\n    except ValueError:\n        return 0.0\nprint(calcular_fator(10, 5))')">Download .PY</button>
+                </div>
+                <div id="cod20" class="codigo-area"># =====================================================================
+# 20ª ATIVIDADE: MODULARIZAÇÃO, CONTROLE DE ESCOPO E TRATAMENTO DE ERROS
+# =====================================================================
+
+# Variável de escopo global para contagem de registros efetuados pelo software
+total_calculos_realizados = 0 
+
+def converter_para_numero_valido(entrada_usuario):
+    """Função utilitária que trata exceções de tipo de dados em tempo real"""
+    try:
+        return float(entrada_usuario)
+    except ValueError:
+        # Captura o erro caso o usuário tente digitar letras ou caracteres especiais invalidando o fluxo
+        print("Erro interno: A entrada fornecida não pôde ser convertida para número real.")
+        return None
+
+def calcular_eficiencia_sistema(potencia_util, potencia_total):
+    """Função modular com escopo interno isolado e retornos explícitos"""
+    global total_calculos_realizados # Permite que a função altere a variável global externa
+    
+    if potencia_total <= 0:
+        print("Erro de processamento: A potência total de entrada deve ser estritamente maior que zero.")
+        return 0.0
+        
+    eficiencia = (potencia_util / potencia_total) * 100
+    total_calculos_realizados += 1
+    return eficiencia
+
+print("=" * 60)
+print(" SISTEMA DE ANÁLISE DE EFICIÊNCIA MODULARIZADO (VERSÃO COMPLETA)")
+print("=" * 60)
+
+p_util_txt = input("Informe o valor da potência útil de saída (W): ")
+p_total_txt = input("Informe o valor da potência total consumida (W): ")
+
+p_util = converter_para_numero_valido(p_util_txt)
+p_total = converter_para_numero_valido(p_total_txt)
+
+if p_util is not None and p_total is not None:
+    resultado_rendimento = calcular_eficiencia_sistema(p_util, p_total)
+    print("\n" + "-" * 45)
+    print(f"Rendimento final calculado do sistema: {resultado_rendimento:.2f}%")
+    print(f"Total de cálculos armazenados globalmente: {total_calculos_realizados}")
+    print("-" * 45)
+else:
+    print("\n[Operação cancelada devido a erros detectados nas entradas fornecidas]")
+print("=" * 60)</div>
+            </div>
+
+            <div class="card" style="grid-column: span 2;">
+                <div>
+                    <h3>21 e 22 Atividade: Problemas Complexos - Matrizes Dinâmicas e Arquivos Externos</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Escolher de forma independente problemas de grande escala e programar soluções em Python que envolvam a manipulação de matrizes de tamanho variável, iterações avançadas, modularização rigorosa em subrotinas e a gravação de relatórios em arquivos de texto locais.</p>
+                        <p><strong>Descrição:</strong> Desenvolvimento de um sistema de automação para leitura de malhas térmicas, computando médias por quadrantes e exportando os resultados estruturados diretamente para um arquivo `.txt` de auditoria.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod21')">Ver Sistema de Automação Completo</button>
+                    <button class="btn btn-down" onclick="downloadAtv('atividade21_22_matriz_arquivos.py', '# Sistema completo de gravação e gerenciamento de matrizes dinâmicas')">Download .PY</button>
+                </div>
+                <div id="cod21" class="codigo-area"># =====================================================================
+# 21ª e 22ª ATIVIDADE: MATRIZES DINÂMICAS E PERSISTÊNCIA DE ARQUIVOS
+# =====================================================================
+
+def criar_malha_termica_dinamica(dimensao):
+    """Gera uma matriz quadrada com dimensões dinâmicas informadas pelo operador"""
+    print(f"\n--- Coleta de Dados para Malha Térmica de Tamanho {dimensao}x{dimensao} ---")
+    malha = []
+    for i in range(dimensao):
+        linha = []
+        for j in range(dimensao):
+            temp = float(input(f"Digite a temperatura do ponto [{i}][{j}] (°C): "))
+            linha.append(temp)
+        malha.append(linha)
+    return malha
+
+def analisar_e_salvar_relatorio(matria_dados, nome_arquivo="relatorio_auditoria_termica.txt"):
+    """Varre a matriz dinamicamente, processa estatísticas e escreve em arquivo externo"""
+    total_pontos = len(matria_dados) * len(matria_dados[0])
+    soma_temperaturas = 0.0
+    maior_temperatura = matria_dados[0][0]
+    
+    for linha in matria_dados:
+        for valor in linha:
+            soma_temperaturas += valor
+            if valor > maior_temperatura:
+                maior_temperatura = valor
+                
+    media_geral = soma_temperaturas / total_pontos
+    
+    # Bloco para gravação segura e persistente de dados usando gerenciador de contexto (with)
+    try:
+        with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
+            arquivo.write("====================================================\n")
+            arquivo.write("      RELATÓRIO TÉCNICO DE AUDITORIA TÉRMICA\n")
+            arquivo.write("====================================================\n\n")
+            arquivo.write(f"Dimensões da Malha Analisada: {len(matria_dados)}x{len(matria_dados)} pontos.\n")
+            arquivo.write(f"Total de sensores mapeados em campo: {total_pontos}\n")
+            arquivo.write(f"Temperatura média computada:        {media_geral:.2f} °C\n")
+            arquivo.write(f"Ponto térmico de maior pico medido:   {maior_temperatura:.2f} °C\n\n")
+            arquivo.write("--- MAPA COMPLETO DAS LEITURAS DA MALHA ---\n")
+            for linha in matria_dados:
+                linha_formatada = " | ".join([f"{val:.1f}°C" for val in linha])
+                arquivo.write(f"[ {linha_formatada} ]\n")
+            arquivo.write("\n====================================================\n")
+        print(f"\nSucesso: O relatório estruturado foi persistido e salvo em '{nome_arquivo}' com sucesso!")
+    except IOError:
+        print("\nErro de sistema: Não foi possível abrir ou gravar dados no arquivo externo especificado.")
+
+# Bloco Principal Interativo
+try:
+    tamanho = int(input("Informe o tamanho desejado para a malha de sensores (ex: 3 para uma matriz 3x3): "))
+    if tamanho <= 0:
+        print("Dimensão inválida. O tamanho da malha deve ser maior que zero.")
+    else:
+        malha_sensores = criar_malha_termica_dinamica(tamanho)
+        analisar_e_salvar_relatorio(malha_sensores)
+except ValueError:
+    print("Erro: A dimensão informada deve ser um número inteiro válido.")</div>
+            </div>
 
         </div>
     </main>
