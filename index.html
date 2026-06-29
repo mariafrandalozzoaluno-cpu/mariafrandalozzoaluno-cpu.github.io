@@ -1,110 +1,30 @@
-<div class="card">
-                <div>
-                    <h3>6 Atividade: Geração de Exercícios com LLMs</h3>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Utilizar três LLMs diferentes para gerar e comparar 10 exercícios de algoritmos aplicados às Engenharias Elétrica, Mecânica e Telecomunicações.</p>
-                        <p><strong>Descrição:</strong> Análise qualitativa comparando clareza de enunciado, pseudocódigo e scripts funcionais em Python gerados por IA.</p>
-                    </div>
-                </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod6')">Ver Análise</button>
-                    <a href="atv6_analise.txt" download class="btn btn-down">Download</a>
-                </div>
-                <div id="cod6" class="codigo-area">Relatório comparativo armazenado. Modelo com melhor desempenho estrutural em Engenharia Elétrica: Gemini.</div>
-            </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Universitário - Maria Luisa</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace !important;
+        }
 
-            <div class="card">
-                <div>
-                    <h3>7 Atividade: Quiz de Avaliação de Experiência</h3>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Coletar a percepção discente sobre o uso de inteligências artificiais na formulação de algoritmos.</p>
-                        <p><strong>Descrição:</strong> Questionário de diagnóstico com foco nas facilidades e barreiras encontradas nas ferramentas.</p>
-                    </div>
-                </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod7')">Ver Resposta</button>
-                </div>
-                <div id="cod7" class="codigo-area">Quiz respondido eletronicamente. Contribuição considerada alta para o entendimento de estruturas de decisão.</div>
-            </div>
+        body {
+            background-color: #FDFBF9;
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            color: #4A3B5C;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-            <div class="card">
-                <div>
-                    <h3>8 Atividade: Resolução de 5 Exercícios em Papel</h3>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Resolver 5 problemas de lógica à mão e submeter à validação de duas LLMs distintas.</p>
-                        <p><strong>Descrição:</strong> Transposição de fluxos manuais para códigos automáticos comparando os resultados das IAs.</p>
-                    </div>
-                </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod8')">Ver Detalhes</button>
-                </div>
-                <div id="cod8" class="codigo-area">Exercícios executados em papel timbrado. Códigos Python gerados pelas IAs apresentaram equivalência sintática de 100%.</div>
-            </div>
+        header {
+            background: linear-gradient(135deg, #FAD4D8, #E6D9FB);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #8E7AB5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
 
-            <div class="card">
-                <div>
-                    <h3>9 Atividade: Exercícios de Listas e Vetores</h3>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Desenvolver algoritmos com arrays/estruturas de dados e comprovar execução com prints de tela.</p>
-                        <p><strong>Descrição:</strong> Manipulação de coleções em Python para armazenamento de variáveis elétricas.</p>
-                        <div class="foto-container">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Execução Listas Python">
-                            <p style="font-size:0.8em; margin:5px 0 0 0;">[Print da Execução no Terminal - Atividade 9]</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod9')">Ver Código</button>
-                    <a href="atv9_vetores.py" download class="btn btn-down">Download .PY</a>
-                </div>
-                <div id="cod9" class="codigo-area"># Algoritmo de armazenamento e inversão de vetores
-valores = []
-for i in range(5):
-    valores.append(float(input("Insira o valor medido: ")))
-print("Ordem inversa das medições:", valores[::-1])</div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>10 Atividade: Quiz de Listas e Matrizes</h3>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Validar o conhecimento conceitual sobre estruturas de indexação e arranjos multidimensionais.</p>
-                        <p><strong>Descrição:</strong> Resolução de perguntas técnicas com foco em loops e iterações sobre vetores.</p>
-                    </div>
-                </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod10')">Ver Avaliação</button>
-                </div>
-                <div id="cod10" class="codigo-area">Quiz finalizado com sucesso no ambiente acadêmico.</div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>11 Atividade: Desafios Avançados de Lógica</h3>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Resolver problemas complexos de otimização algorítmica.</p>
-                        <p><strong>Descrição:</strong> Criação de rotinas para filtragem de ruídos em sinais numéricos utilizando estruturas compostas.</p>
-                    </div>
-                </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod11')">Ver Código</button>
-                </div>
-                <div id="cod11" class="codigo-area"># Filtragem de valores espúrios
-sinal = [220, 222, 500, 219, 221]
-filtrado = [v for v in sinal if v < 300]
-print("Sinal corrigido:", filtrado)</div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>12 Atividade: Quiz sobre Funções e Escopo</h3>
-                    <div class="detalhes">
-                        <p><strong>Objetivo:</strong> Fixar conceitos sobre modularização, passagem de parâmetros e visibilidade de variáveis.</p>
-                        <p><strong>Descrição:</strong> Avaliação em aula sobre funções globais e locais em linguagens estruturadas.</p>
-                    </div>
-                </div>
-                <div class="acoes">
-                    <button class="btn btn-ver" onclick="toggleCod('cod12')">Ver Resposta</button>
-                </div>
-                <div id="cod12" class="codigo-area">Conceitos aplicados: Funções matemáticas e isolamento de escopo local.</div>
-            </div>
+        header h1
