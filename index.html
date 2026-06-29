@@ -3,42 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Acadêmico - Maria Frandalozzo</title>
+    <title>Portfólio Aquarela - Maria Luisa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --roxo-primario: #4A3B5C;
-            --rosa-acentuado: #F8C3CD;
-            --rosa-claro: #FCEEF1;
-            --cor-de-fundo: #F7F4F6;
-            --card-bg: #FFFFFF;
-            --texto: #333333;
+            --roxo-aquarela: #8E7AB5;
+            --rosa-suave: #FAD4D8;
+            --verde-menta: #BFEA7C;
+            --bg-papel: #FDFBF9;
+            --texto: #4A3B5C;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--cor-de-fundo);
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-papel);
+            /* Efeito de textura de papel artesanal */
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
             color: var(--texto);
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: var(--roxo-primario);
-            color: white;
+            background: linear-gradient(135deg, var(--rosa-suave), #E6D9FB);
+            padding: 50px 20px;
             text-align: center;
-            padding: 40px 20px;
+            border-bottom: 5px solid var(--roxo-aquarela);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
             margin: 0;
-            font-size: 2.3em;
+            color: var(--roxo-aquarela);
         }
 
-        header p {
-            margin: 10px 0 0 0;
+        .info-header {
+            margin-top: 15px;
             font-size: 1.1em;
-            color: var(--rosa-acentuado);
+            line-height: 1.6;
         }
+
+        .info-header strong { color: var(--roxo-aquarela); }
 
         main {
             max-width: 1200px;
@@ -46,90 +53,112 @@
             padding: 0 20px;
         }
 
-        /* Estrutura de Duas Colunas Lado a Lado */
+        /* Estrutura de Duas Colunas Responsiva */
         .container-atividades {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        /* Estilo dos Quadradinhos (Cards) */
-        .card-atividade {
-            background-color: var(--card-bg);
-            border: 1px solid var(--rosa-acentuado);
-            border-radius: 12px;
-            padding: 25px;
-            /* Garante 2 por linha no computador */
-            flex: 1 1 calc(50% - 25px);
-            box-sizing: border-box;
-            box-shadow: 0 4px 8px rgba(74, 59, 92, 0.05);
+        /* Card Estilo Aquarela */
+        .card {
+            background: white;
+            border-radius: 30px 10px 30px 10px; /* Bordas orgânicas */
+            padding: 30px;
+            border: 2px solid var(--rosa-suave);
+            box-shadow: 10px 10px 0px var(--rosa-suave);
+            transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card-atividade h3 {
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.4em;
+            font-weight: 700;
             margin-top: 0;
-            color: var(--roxo-primario);
-            font-size: 1.35em;
-            border-bottom: 2px solid var(--rosa-claro);
+            color: var(--roxo-aquarela);
+            border-bottom: 2px solid var(--rosa-suave);
             padding-bottom: 8px;
         }
 
+        .meta-info {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .autor {
-            color: #666;
             font-size: 0.9em;
-            margin: 5px 0 15px 0;
+            color: #666;
+            margin-bottom: 15px;
             font-style: italic;
         }
 
-        .info-entrega p {
+        .detalhes p {
             margin: 10px 0;
-            line-height: 1.5;
             font-size: 0.95em;
+            line-height: 1.6;
         }
 
-        .info-entrega strong {
-            color: var(--roxo-primario);
-        }
-
-        /* Botões de Ação */
-        .botoes-links {
-            margin-top: 20px;
+        /* Botões Interativos */
+        .acoes {
             display: flex;
-            gap: 12px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .btn {
-            display: inline-block;
-            padding: 12px 15px;
-            background-color: var(--roxo-primario);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.9em;
-            font-weight: bold;
-            text-align: center;
             flex: 1;
-            transition: opacity 0.2s;
+            padding: 12px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            font-size: 0.9em;
         }
 
-        .btn:hover {
-            opacity: 0.9;
+        .btn-ver { background-color: var(--roxo-aquarela); color: white; }
+        .btn-down { background-color: var(--verde-menta); color: #4A5D23; }
+
+        .btn:hover { opacity: 0.8; transform: scale(1.03); }
+
+        /* Área de Código Escondida */
+        .codigo-area {
+            display: none;
+            margin-top: 15px;
+            background: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            border-left: 4px solid var(--roxo-aquarela);
+            white-space: pre-wrap;
         }
 
-        .btn-download {
-            background-color: #2e7d32; /* Verde discreto para download */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6em;
+            color: var(--roxo-aquarela);
         }
 
-        /* Responsividade para Celular (vira uma coluna só) */
-        @media (max-width: 768px) {
-            .card-atividade {
-                flex: 1 1 100%;
-            }
-            .botoes-links {
-                flex-direction: column;
-            }
+        /* Ajuste para Celular */
+        @media (max-width: 850px) {
+            .container-atividades { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5em; }
         }
     </style>
 </head>
@@ -137,50 +166,79 @@
 
     <header>
         <h1>Meu Portfólio Acadêmico</h1>
-        <p>Acompanhamento de Entregas e Atividades</p>
+        <div class="info-header">
+            <p><strong>Discente:</strong> Maria Luisa Carvalho Frandalozzo</p>
+            <p><strong>Curso:</strong> Engenharia Elétrica</p>
+            <p><strong>Instituição:</strong> Universidade Federal do Pampa (Unipampa)</p>
+            <p><strong>Docente:</strong> Prof. Dr. Diego Luis Kreutz</p>
+        </div>
     </header>
 
     <main>
         <div class="container-atividades">
 
-            <div class="card-atividade">
+            <div class="card">
                 <div>
-                    <h3>Entrega 1: Nome da Primeira Atividade</h3>
-                    <p class="autor"><strong>Autor:</strong> Maria Frandalozzo</p>
-                    
-                    <div class="info-entrega">
-                        <p><strong>Objetivo:</strong> Escreva aqui qual era o objetivo principal desta atividade e o problema que ela resolvia.</p>
-                        <p><strong>Tecnologias Utilizadas:</strong> HTML5, CSS3 e JavaScript.</p>
-                        <p><strong>Resultados Obtidos:</strong> Explique o que você aprendeu a desenvolver ou o resultado final que alcançou.</p>
+                    <div class="meta-info">Entrega 01</div>
+                    <h3>Nome da Primeira Atividade</h3>
+                    <p class="autor">Autor: Maria Luisa C. Frandalozzo</p>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Cole aqui o objetivo desta atividade que está no seu PDF.</p>
+                        <p><strong>Tecnologias Utilizadas:</strong> Cite os componentes, softwares ou linguagens usadas.</p>
+                        <p><strong>Resultados Obtidos:</strong> Descreva brevemente o resultado ou conclusão da atividade.</p>
                     </div>
                 </div>
-
-                <div class="botoes-links">
-                    <a href="#" target="_blank" class="btn">Visualizar</a>
-                    <a href="#" download class="btn btn-download">Download Artefato</a>
+                <div>
+                    <div class="acoes">
+                        <button class="btn btn-ver" onclick="toggleCodigo('cod1')">Ver Resposta</button>
+                        <a href="LINK_DO_SEU_ARQUIVO" download class="btn btn-down">Download Artefato</a>
+                    </div>
+                    <div id="cod1" class="codigo-area">
+/* Cole aqui o código ou resposta detalhada desta atividade */
+print("Exemplo de código ou resposta interativa");
+                    </div>
                 </div>
             </div>
 
-            <div class="card-atividade">
+            <div class="card">
                 <div>
-                    <h3>Entrega 2: Nome da Segunda Atividade</h3>
-                    <p class="autor"><strong>Autor:</strong> Maria Frandalozzo</p>
-                    
-                    <div class="info-entrega">
-                        <p><strong>Objetivo:</strong> Escreva aqui o objetivo da segunda entrega realizada na matéria.</p>
-                        <p><strong>Tecnologias Utilizadas:</strong> Lógica de Programação, Algoritmos.</p>
-                        <p><strong>Resultados Obtidos:</strong> Detalhe os aprendizados e o sucesso na execução do projeto.</p>
+                    <div class="meta-info">Entrega 02</div>
+                    <h3>Nome da Segunda Atividade</h3>
+                    <p class="autor">Autor: Maria Luisa C. Frandalozzo</p>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Cole aqui o objetivo da segunda atividade que está no seu PDF.</p>
+                        <p><strong>Tecnologias Utilizadas:</strong> Softwares, fórmulas ou ferramentas aplicadas.</p>
+                        <p><strong>Resultados Obtidos:</strong> Resultados gerados, gráficos ou conclusões obtidas.</p>
                     </div>
                 </div>
-
-                <div class="botoes-links">
-                    <a href="#" target="_blank" class="btn">Visualizar</a>
-                    <a href="#" download class="btn btn-download">Download Artefato</a>
+                <div>
+                    <div class="acoes">
+                        <button class="btn btn-ver" onclick="toggleCodigo('cod2')">Ver Resposta</button>
+                        <a href="LINK_DO_SEU_ARQUIVO" download class="btn btn-down">Download Artefato</a>
+                    </div>
+                    <div id="cod2" class="codigo-area">
+/* Cole aqui o código ou resposta detalhada da segunda atividade */
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
 
+    <footer>
+        Desenvolvido por Maria Luisa Carvalho Frandalozzo &copy; 2026
+    </footer>
+
+    <script>
+        // Função para mostrar/esconder a área de resposta
+        function toggleCodigo(id) {
+            var area = document.getElementById(id);
+            if (area.style.display === "block") {
+                area.style.display = "none";
+            } else {
+                area.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
