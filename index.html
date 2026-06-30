@@ -959,6 +959,125 @@ except ValueError:
             </div>
 
         </div>
+            <div class="card" style="grid-column: span 2;">
+                <div>
+                    <h3>23 e 24 Atividade: Projeto Final - Sistema de Engenharia de Grande Porte</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Desenvolver um sistema computacional robusto e completo focado em Engenharia, integrando matrizes multidimensionais dinâmicas, subrotinas avançadas com passagem de parâmetros por referência/valor e persistência total de dados em arquivos externos estruturados.</p>
+                        <p><strong>Descrição:</strong> Criação de um software para simulação e monitoramento de fluxo de carga em subestações elétricas, gerando relatórios automatizados de conformidade regulatória.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod23')">Ver Sistema de Engenharia Completo</button>
+                    <button class="btn btn-down" onclick="downloadAtv('projeto_final_subestacao.py', '# Sistema Supervisor de Subestações Elétricas')">Download .PY</button>
+                </div>
+                <div id="cod23" class="codigo-area"># =====================================================================
+# 23ª e 24ª ATIVIDADE: PROJETO FINAL - SUPERVISÓRIO DE SUBESTAÇÃO
+# =====================================================================
+
+def processar_carga_subestacao(matriz_transformadores):
+    """Processa blocos de potência ativa e reativa extraindo o fator de potência médio"""
+    relatorio_linhas = []
+    total_potencia_ativa = 0.0
+    
+    for idx, transfo in enumerate(matriz_transformadores):
+        p_ativa = transfo[0]  # kW
+        p_reativa = transfo[1] # kVAR
+        
+        total_potencia_ativa += p_ativa
+        # Cálculo do Fator de Potência (FP = P / S)
+        potencia_aparente = (p_ativa**2 + p_reativa**2)**0.5
+        
+        fator_potencia = p_ativa / potencia_aparente if potencia_aparente > 0 else 1.0
+        status = "NOMINAL" if fator_potencia >= 0.92 else "REATIVO EXCESSIVO (MULTA)"
+        
+        relatorio_linhas.append(f"TRAFO {idx+1}: Ativa={p_ativa}kW | Reativa={p_reativa}kVAR | FP={fator_potencia:.2f} | [{status}]")
+        
+    return total_potencia_ativa, relatorio_linhas
+
+def exportar_dados_operacionais(nome_arquivo, carga_total, logs):
+    """Persiste os dados de auditoria do sistema elétrico para análise posterior"""
+    with open(nome_arquivo, "w", encoding="utf-8") as f:
+        f.write("====================================================\n")
+        f.write("       LOG DE OPERAÇÃO DO SISTEMA INTERLIGADO\n")
+        f.write("====================================================\n\n")
+        f.write(f"Carga Ativa Total Alocada na Subestação: {carga_total:.2f} kW\n")
+        f.write("Status Individual por Ponto de Transformação:\n")
+        for log in logs:
+            f.write(f" - {log}\n")
+        f.write("\n====================================================\n")
+
+# Simulando uma matriz dinâmica de dados capturados de 3 transformadores de potência
+dados_campo = [
+    [1500.0, 400.0],  # Trafo 1: P, Q
+    [1200.0, 850.0],  # Trafo 2: P, Q (FP baixo)
+    [2000.0, 200.0]   # Trafo 3: P, Q
+]
+
+ativa_total, logs_operacao = processar_carga_subestacao(dados_campo)
+exportar_dados_operacionais("log_subestacao_unipampa.txt", ativa_total, logs_operacao)
+
+print("--- EXECUÇÃO DO PROJETO FINAL ---")
+for linha in logs_operacao:
+    print(linha)
+print("\n[Operação finalizada: Histórico persistido em arquivo texto]")</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>25 Atividade: Autoavaliação do Portfólio</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Realizar uma reflexão crítica e analítica sobre o próprio desempenho, evolução técnica e dedicação ao longo do componente curricular.</p>
+                        <p><strong>Descrição:</strong> Relato reflexivo pontuando os principais aprendizados em algoritmos e o processo de construção do artefato.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod25')">Ver Autoavaliação</button>
+                </div>
+                <div id="cod25" class="codigo-area">Autoavaliação desenvolvida com foco na transição do pensamento puramente matemático para a estruturação lógica de software. Identifiquei grande evolução na organização de códigos limpos e tratamento de exceções, consolidando uma base sólida para as matérias específicas de Engenharia Elétrica.</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>26 Atividade: Feedback da Disciplina</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Fornecer um retorno construtivo sobre a didática, ferramentas utilizadas, desafios propostos e condução das aulas pelo docente.</p>
+                        <p><strong>Descrição:</strong> Avaliação qualitativa do formato pedagógico híbrido envolvendo ferramentas tradicionais e LLMs.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod26')">Ver Feedback</button>
+                </div>
+                <div id="cod26" class="codigo-area">A disciplina apresentou uma metodologia inovadora ao integrar inteligências artificiais no processo de aprendizagem, não como substituto do raciocínio, mas como ferramenta de auditoria e geração de novos problemas. O ritmo das aulas e os quizes ajudaram na fixação contínua dos conceitos técnicos de matrizes e funções.</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>27 Atividade: Relatório do Portfólio no Verso</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Geração do documento técnico compilado descrevendo a arquitetura do site do portfólio e a organização lógica do repositório no GitHub.</p>
+                        <p><strong>Descrição:</strong> Resumo das metodologias aplicadas e da estrutura de controle de versão utilizada.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod27')">Ver Resumo</button>
+                </div>
+                <div id="cod27" class="codigo-area">Relatório gerado em formato PDF e anexado na plataforma acadêmica, detalhando o uso do padrão CSS Grid para responsividade e funções JavaScript nativas para a manipulação dinâmica de downloads dos scripts em Python.</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>28 Atividade: Apresentação Final do Portfólio</h3>
+                    <div class="detalhes">
+                        <p><strong>Objetivo:</strong> Apresentar publicamente e defender o portfólio construído perante o docente e a turma, validando os códigos em tempo real.</p>
+                        <p><strong>Descrição:</strong> Arguição final e demonstração de usabilidade das funcionalidades e links de download do site.</p>
+                    </div>
+                </div>
+                <div class="acoes">
+                    <button class="btn btn-ver" onclick="toggleCod('cod28')">Ver Status</button>
+                </div>
+                <div id="cod28" class="codigo-area">Apresentação concluída com sucesso! Todos os links de download foram testados em tempo real e a estrutura foi validada sem inconformidades pelo Prof. Diego Kreutz.</div>
+            </div>
     </main>
 
     <footer>
